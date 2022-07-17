@@ -17,10 +17,10 @@ type ChangeCategoryNameInSpendsListType = ReturnType<typeof changeCategoryNameIn
 
 type ActionType = AddSpendType | RemoveSpendType | ChangeCategoryNameInSpendsListType ;
 
-export const spendsState = [];
+export const initialState: SpendStateType[] = [];
 
 
-export const spendsReducer = (state: SpendStateType[], action: ActionType): SpendStateType[] => {
+export const spendsReducer = (state: SpendStateType[] = initialState , action: ActionType): SpendStateType[] => {
     switch (action.type) {
         case ADD_SPEND:
         let newSpend={id: action.payload.id, category: action.payload.category, sum: action.payload.spend, component: action.payload.component}

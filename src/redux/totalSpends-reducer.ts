@@ -1,4 +1,4 @@
-import {foodId, houseId, petId, travelId, healthCareId, babyId, clothesId} from "./categoryId";
+import {foodId, houseId, petId, travelId, healthCareId, babyId, clothesId, transportId} from "./categoryId";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import FlightIcon from "@mui/icons-material/Flight";
@@ -23,23 +23,22 @@ type UpdateTotalSumType = ReturnType<typeof updateTotalSumAC>;
 
 type ActionType =  ChangeCategoryNameType | UpdateTotalSumType;
 
-
 export const CHANGE_CATEGORY_NAME = "CHANGE_CATEGORY_NAME";
 export const UPDATE_TOTAL_SUM = "UPDATE_TOTAL_SUM ";
 
-// export const totalSpendsState = [
-//     {id: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
-//     {id: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
-//     {id: travelId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "success"},
-//     {id: petId, categoryName: "Pet", totalSum: 0, component: PetsIcon, color: "primary"},
-//     {id: houseId, categoryName: "House", totalSum: 0, component: HouseIcon, color: "secondary"},
-//     {id: healthCareId, categoryName: "Health care", totalSum: 0, component: VaccinesIcon, color: "error"},
-//     {id: clothesId, categoryName: "Shopping", totalSum: 0, component: CheckroomIcon, color: "secondary"},
-//     {id: babyId, categoryName: "Baby", totalSum: 0, component: ChildFriendlyIcon, color: "primary"},
-// ];
+const initialState: TotalSpendsStateType[] = [
+    {id: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
+    {id: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
+    {id: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "success"},
+    {id: petId, categoryName: "Pet", totalSum: 0, component: PetsIcon, color: "primary"},
+    {id: houseId, categoryName: "House", totalSum: 0, component: HouseIcon, color: "secondary"},
+    {id: healthCareId, categoryName: "Health care", totalSum: 0, component: VaccinesIcon, color: "error"},
+    {id: clothesId, categoryName: "Shopping", totalSum: 0, component: CheckroomIcon, color: "secondary"},
+    {id: babyId, categoryName: "Baby", totalSum: 0, component: ChildFriendlyIcon, color: "primary"},
+];
 
 
-export const totalSpendReducer = (state: TotalSpendsStateType[], action: ActionType): TotalSpendsStateType[] => {
+export const totalSpendReducer = (state: TotalSpendsStateType[] = initialState, action: ActionType): TotalSpendsStateType[] => {
     switch (action.type) {
         case  CHANGE_CATEGORY_NAME:
             debugger
