@@ -1,0 +1,16 @@
+.container {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    /*align-content: center;*/
+}
+
+.mainBlock {
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+    border-radius: 20%;
+    flex-wrap: wrap;
+}
