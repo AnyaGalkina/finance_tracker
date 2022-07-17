@@ -1,26 +1,31 @@
 import React from "react";
 import {SvgIcon} from "@mui/material";
-import {SvgComponentType, TotalSpendsStateType} from "../../../reducers/totalSpends-reducer";
+import {changeCategoryNameAC, SvgComponentType, TotalSpendsStateType} from "../../../redux/totalSpends-reducer";
 import EditableSpan from "../../EditableSpan/EditableSpan";
 import styles from "./IconList.module.css";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "../../../redux/store";
 
 
 type PropsType = {
-    totalSpendsState: TotalSpendsStateType[];
     addSpend: (id: string,  category: string, component: SvgComponentType) => void;
-    changeCategoryName: (id: string, category: string) => void;
 }
 
 
-const IconList: React.FC<PropsType> = ({totalSpendsState,changeCategoryName, addSpend}) => {
+const IconList: React.FC<PropsType> = ({addSpend}) => {
+
+    const dispatch = useDispatch();
+    const totalSpends = useSelector<AppRootStateType, TotalSpendsStateType[]>(state => state.totalSpends);
+
+
 
     return (
         <div className={styles.container}>
-            {totalSpendsState.map(s => {
+            {totalSpends.map(s => {
 
                  const changeCategoryNameHandler = (category: string) => {
                      debugger
-                     changeCategoryName(s.id, category)
+                     dispatch(changeCategoryNameAC(s.id, category))
                  }
                  const addSpendHandler = () => {
                      addSpend(s.id, s.categoryName, s.component);
