@@ -1,46 +1,43 @@
 import React from "react";
 import {SvgIcon} from "@mui/material";
-import {TotalSpendsStateType} from "../../reducers/totalSpends-reducer";
-import EditableSpan from "../EditableSpan/EditableSpan";
-import Input from "../Input/Input";
-
-
-// import Icon from "./Icon/Icon";
-
+import {SvgComponentType, TotalSpendsStateType} from "../../../reducers/totalSpends-reducer";
+import EditableSpan from "../../EditableSpan/EditableSpan";
+import styles from "./IconList.module.css";
 
 
 type PropsType = {
     totalSpendsState: TotalSpendsStateType[];
-    addSpend: (id: string,  category: string) => void;
+    addSpend: (id: string,  category: string, component: SvgComponentType) => void;
     changeCategoryName: (id: string, category: string) => void;
 }
 
 
 const IconList: React.FC<PropsType> = ({totalSpendsState,changeCategoryName, addSpend}) => {
 
-
     return (
-        <div>
+        <div className={styles.container}>
             {totalSpendsState.map(s => {
 
                  const changeCategoryNameHandler = (category: string) => {
+                     debugger
                      changeCategoryName(s.id, category)
                  }
                  const addSpendHandler = () => {
-                     addSpend(s.id, s.categoryName);
+                     addSpend(s.id, s.categoryName, s.component);
                  }
 
                  return(
-                     <div>
+                     <div className={styles.img} key={s.id}>
                          <SvgIcon
-                             key={s.id}
                              component={s.component}
                              inheritViewBox
                              color={s.color}
                              sx={{fontSize: 80}}
                              onClick={addSpendHandler}
                          />
-                         <EditableSpan title={s.categoryName}
+                         <EditableSpan
+                             className={styles.title}
+                             title={s.categoryName}
                                        changeTitleName={changeCategoryNameHandler}
                          ></EditableSpan>
                      </div>
