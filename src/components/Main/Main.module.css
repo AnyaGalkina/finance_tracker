@@ -1,9 +1,18 @@
-.container {
+.containerBlock {
     width: 900px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
+    /*align-content: center;*/
+}
+
+.container {
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*margin: 0 auto;*/
     /*align-content: center;*/
 }
 
@@ -13,4 +22,11 @@
     background-color: pink;
     border-radius: 20%;
     flex-wrap: wrap;
+}
+
+.savings {
+    width: 800px;
+    height: 200px;
+    background-color: #c3e58b;
+    border-radius: 20%;
 }
