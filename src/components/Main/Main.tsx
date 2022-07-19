@@ -7,7 +7,7 @@ const Main = () => {
     const navigate = useNavigate();
 
     return (
-        <div>
+        <div className={styles.containerBlock}>
             <div className={styles.container}>
                 <div className={styles.mainBlock}
                      onClick={() => {
@@ -16,17 +16,17 @@ const Main = () => {
                 >Add Spends
                 </div>
                 <div className={styles.mainBlock}
-                     // onClick={() => {
-                     //     navigate("/earnings")
-                     // }}
-                >Add Earnings
+                     onClick={() => {
+                         navigate('/income')
+                     }}
+                >Add Income
                 </div>
             </div>
             <div
-                // className={styles}
-                // onClick={() => {
-                //     navigate("/savings")
-                // }}
+                className={styles.savings}
+                onClick={() => {
+                    navigate("/savings")
+                }}
             >Start Savings</div>
         </div>
     );

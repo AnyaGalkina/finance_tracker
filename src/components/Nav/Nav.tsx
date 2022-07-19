@@ -8,7 +8,7 @@ const Nav: React.FC = () => {
         <div className={style.nav}>
             <NavLink className={style.link} to={'/'}>Home</NavLink>
             <NavLink className={style.link} to={'/spends'}>Spends</NavLink>
-            <NavLink className={style.link} to={'/earnings'}>Earnings</NavLink>
+            <NavLink className={style.link} to={'/income'}>Income</NavLink>
             <NavLink className={style.link} to={'/savings'}>Savings</NavLink>
         </div>
     );
