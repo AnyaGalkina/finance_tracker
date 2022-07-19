@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState, KeyboardEvent, FocusEvent} from "react";
+import React, {ChangeEvent, useState, KeyboardEvent} from "react";
 
 type PropsType = {
     title: string;
@@ -8,21 +8,19 @@ type PropsType = {
 
 const EditableSpan: React.FC<PropsType> = ({title, changeTitleName, className}) => {
     const [editMode, setEditMode] = useState(false);
-    const [category, setCategory] = useState(title);
+    const [newTitle, setNewTitle] = useState(title);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setCategory(e.currentTarget.value);
+        setNewTitle(e.currentTarget.value);
     }
 
     const renameCategory = () => {
-        debugger
-        changeTitleName(category);
+        changeTitleName(newTitle);
         setEditMode(false);
     }
 
     const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
         if (e.key === "Enter") {
-            debugger
             renameCategory();
         }
     }
@@ -42,6 +40,7 @@ const EditableSpan: React.FC<PropsType> = ({title, changeTitleName, className}) 
                 onChange={onChangeHandler}
                 onKeyDown={onKeyDownHandler}
                 onBlur={onBlurHandler}
+                autoFocus
             />
             : <span
                 className={className}
