@@ -1,34 +1,42 @@
-import {CHANGE_CATEGORY_NAME, SvgComponentType} from "./totalSpends-reducer";
+import {CHANGE_CATEGORY_NAME, ChangeCategoryNameType, SvgComponentType} from "./totalSpends-reducer";
+import {v1} from "uuid";
 
 const ADD_SPEND = "ADD_SPEND";
 const REMOVE_SPEND = "REMOVE_SPEND";
 
-export type SpendStateType = {
+export type SumType = {
+    categoryId: string;
     id: string;
-    category: string;
+    categoryName: string;
     sum: number;
     component: SvgComponentType
+
 }
 
-type AddSpendType = ReturnType<typeof addSpendAC>;
-type RemoveSpendType = ReturnType<typeof removeSpendAC>;
-type ChangeCategoryNameInSpendsListType = ReturnType<typeof changeCategoryNameInSpendsListAC>;
+export type AddSpendType = ReturnType<typeof addSpendAC>;
+export type RemoveSpendType = ReturnType<typeof removeSpendAC>;
 
 
-type ActionType = AddSpendType | RemoveSpendType | ChangeCategoryNameInSpendsListType ;
+type ActionType = AddSpendType | RemoveSpendType | ChangeCategoryNameType;
 
-export const initialState: SpendStateType[] = [];
+export const initialState: SumType[] = [];
 
 
-export const spendsReducer = (state: SpendStateType[] = initialState , action: ActionType): SpendStateType[] => {
+export const spendsReducer = (state: SumType[] = initialState, action: ActionType): SumType[] => {
     switch (action.type) {
         case ADD_SPEND:
-        let newSpend={id: action.payload.id, category: action.payload.category, sum: action.payload.spend, component: action.payload.component}
+            let newSpend = {
+                categoryId: action.payload.categoryId,
+                id: action.payload.id,
+                categoryName: action.payload.categoryName,
+                sum: action.payload.spend,
+                component: action.payload.component
+            }
             return [...state, newSpend];
         case CHANGE_CATEGORY_NAME:
             debugger
             return state.map(s =>
-                s.id === action.payload.id ? {...s, category: action.payload.category} : s
+                s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s
             );
         case REMOVE_SPEND:
             return state.filter(s => s.id !== action.payload.id)
@@ -37,16 +45,17 @@ export const spendsReducer = (state: SpendStateType[] = initialState , action: A
     }
 }
 
-export const addSpendAC = (id: string, category: string, spend: number, component: SvgComponentType  ) => {
+export const addSpendAC = (categoryId: string, categoryName: string, spend: number, component: SvgComponentType) => {
     return {
         type: ADD_SPEND,
         payload: {
-            id,
-            category,
+            categoryId,
+            id: v1(),
+            categoryName,
             spend,
             component
         }
-    }as const
+    } as const
 }
 
 
@@ -57,14 +66,4 @@ export const removeSpendAC = (id: string) => {
             id
         }
     } as const
-}
-
-export const changeCategoryNameInSpendsListAC = (id: string, category: string) => {
-    return {
-        type: CHANGE_CATEGORY_NAME,
-        payload: {
-            id,
-            category
-        }
-    }as const
 }
