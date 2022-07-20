@@ -1,31 +1,24 @@
 import React from "react";
 import Input from "../Input/Input";
-import ListOfLastSums from "./ListOfLastSpends";
-import {SpendStateType} from "../../reducers/spend-reducer";
-import {SvgComponentType} from "../../reducers/totalSpends-reducer";
+import ListOfLastSums from "../ListOfLastSum/ListOfLastSums";
+import {addSpendAC, removeSpendAC, SumType} from "../../redux/spend-reducer";
+import {useSelector} from "react-redux";
+import {AppRootStateType} from "../../redux/store";
+import {TotalSumType} from "../../redux/totalSpends-reducer";
 
-type PropsType = {
-    totalSpendsState: any
-    spends: SpendStateType[];
-    changeCategoryName: (id: string, category: string) => void;
-    addSpend: (id: string,  category: string, sum: number,  component: SvgComponentType) => void;
-    removeSpend: (id: string) => void;
-}
-
-export const Spends: React.FC<PropsType> = ({spends, totalSpendsState, addSpend, changeCategoryName, removeSpend}) => {
-
+export const Spends: React.FC = () => {
+    const spends = useSelector<AppRootStateType, SumType[]>(state => state.spends);
+    const totalSpends = useSelector<AppRootStateType, TotalSumType[]>(state => state.totalSpends);
 
     return (
         <div>
-            <Input
-                changeCategoryName={changeCategoryName}
-                addSpend={addSpend} totalSpendsState={totalSpendsState}
-            />
 
-            <ListOfLastSums
-                spends={spends}
-                removeSpend={removeSpend}
+            <Input
+                title={"Add spends"}
+                totalSum={totalSpends}
+                addItem={addSpendAC}
             />
+            <ListOfLastSums sum={spends} removeItem={removeSpendAC}/>
         </div>
     );
 };
