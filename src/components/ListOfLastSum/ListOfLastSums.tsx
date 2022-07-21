@@ -6,7 +6,7 @@ import {RemoveIncomeType} from "../../redux/income-reducer";
 
 type PropsType = {
     sum: SumType[];
-    removeItem: (id: string) => RemoveSpendType |  RemoveIncomeType;
+    removeItem: (id: string, sum: number) => RemoveSpendType |  RemoveIncomeType;
 }
 
 const ListOfLastSums: React.FC<PropsType> = ({sum, removeItem}) => {

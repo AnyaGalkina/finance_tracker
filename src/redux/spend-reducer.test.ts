@@ -28,7 +28,7 @@ test("expense should be added", () => {
 })
 
 test("expense should be removed", () => {
-    let newState = spendsReducer(initState, removeSpendAC("1"));
+    let newState = spendsReducer(initState, removeSpendAC("1", 50));
 
     expect(newState.length).toBe(2);
     expect(newState.find( el => el.id === "1")).toBeUndefined();

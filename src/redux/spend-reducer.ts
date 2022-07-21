@@ -1,8 +1,8 @@
 import {CHANGE_CATEGORY_NAME, ChangeCategoryNameType, SvgComponentType} from "./totalSpends-reducer";
 import {v1} from "uuid";
 
-const ADD_SPEND = "ADD_SPEND";
-const REMOVE_SPEND = "REMOVE_SPEND";
+export const ADD_SPEND = "ADD_SPEND";
+export const REMOVE_SPEND = "REMOVE_SPEND";
 
 export type SumType = {
     categoryId: string;
@@ -29,7 +29,7 @@ export const spendsReducer = (state: SumType[] = initialState, action: ActionTyp
                 categoryId: action.payload.categoryId,
                 id: action.payload.id,
                 categoryName: action.payload.categoryName,
-                sum: action.payload.spend,
+                sum: action.payload.sum,
                 component: action.payload.component
             }
             return [...state, newSpend];
@@ -45,25 +45,26 @@ export const spendsReducer = (state: SumType[] = initialState, action: ActionTyp
     }
 }
 
-export const addSpendAC = (categoryId: string, categoryName: string, spend: number, component: SvgComponentType) => {
+export const addSpendAC = (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
     return {
         type: ADD_SPEND,
         payload: {
             categoryId,
             id: v1(),
             categoryName,
-            spend,
-            component
+            sum,
+            component,
         }
     } as const
 }
 
 
-export const removeSpendAC = (id: string) => {
+export const removeSpendAC = (id: string, sum: number) => {
     return {
         type: REMOVE_SPEND,
         payload: {
-            id
+            id,
+            sum
         }
     } as const
 }

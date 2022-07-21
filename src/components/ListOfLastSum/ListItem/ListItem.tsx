@@ -15,7 +15,7 @@ type PropsType = {
     component: SvgComponentType;
     sum: number;
     categoryName: string;
-   removeItem: (id: string) => RemoveSpendType |  RemoveIncomeType;
+    removeItem: (id: string, sum: number) => RemoveSpendType |  RemoveIncomeType;
 }
 
 const ListItem: React.FC<PropsType> = ({
@@ -25,12 +25,12 @@ const ListItem: React.FC<PropsType> = ({
 
     const onClickHandler = () => {
         //@ts-ignore
-        dispatch(removeItem(id));
+        dispatch(removeItem(id, sum));
         // removeSpend(s.id)
     }
 
     return (
-        <div key={id} className={styles.list}>
+        <div key={key} className={styles.list}>
             <SvgIcon
                 component={component}
                 inheritViewBox

@@ -2,8 +2,8 @@ import {CHANGE_CATEGORY_NAME, ChangeCategoryNameType, SvgComponentType} from "./
 import {SumType} from "./spend-reducer";
 import {v1} from "uuid";
 
-const ADD_INCOME = "ADD_INCOME";
-const REMOVE_INCOME = "REMOVE_INCOME";
+export const ADD_INCOME = "ADD_INCOME";
+export const REMOVE_INCOME = "REMOVE_INCOME";
 
 export type AddIncomeType = ReturnType<typeof addIncomeAC>;
 export type RemoveIncomeType = ReturnType<typeof removeIncomeAC>;
@@ -21,7 +21,7 @@ export const incomeReducer = (state: SumType[] = initialState, action: ActionTyp
                 categoryId: action.payload.categoryId,
                 id: action.payload.id,
                 categoryName: action.payload.categoryName,
-                sum: action.payload.spend,
+                sum: action.payload.sum,
                 component: action.payload.component
             }
             return [...state, newIncome];
@@ -37,25 +37,26 @@ export const incomeReducer = (state: SumType[] = initialState, action: ActionTyp
     }
 }
 
-export const addIncomeAC = (categoryId: string, categoryName: string, spend: number, component: SvgComponentType) => {
+export const addIncomeAC = (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
     return {
         type: ADD_INCOME,
         payload: {
             categoryId,
             id: v1(),
             categoryName,
-            spend,
-            component
+            sum,
+            component,
         }
     } as const
 }
 
 
-export const removeIncomeAC = (id: string) => {
+export const removeIncomeAC = (id: string, sum: number) => {
     return {
         type: REMOVE_INCOME,
         payload: {
-            id
+            id,
+            sum
         }
     } as const
 }

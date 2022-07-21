@@ -29,7 +29,7 @@ test("income should be added", () => {
 })
 
 test("expense should be removed", () => {
-    let newState = incomeReducer(initState, removeIncomeAC("1"));
+    let newState = incomeReducer(initState, removeIncomeAC("1", 100));
 
     expect(newState.length).toBe(2);
     expect(newState.find( el => el.id === "1")).toBeUndefined();
