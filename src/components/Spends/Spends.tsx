@@ -5,6 +5,7 @@ import {addSpendAC, removeSpendAC, SumType} from "../../redux/spend-reducer";
 import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
 import {TotalSumType} from "../../redux/totalSpends-reducer";
+import FinanceTracker from "../FinanceTracker/FinanceTracker";
 
 export const Spends: React.FC = () => {
     const spends = useSelector<AppRootStateType, SumType[]>(state => state.spends);
@@ -12,15 +13,23 @@ export const Spends: React.FC = () => {
 
     return (
         <div>
-
-            <Input
-                title={"Add spends"}
-                totalSum={totalSpends}
+            <FinanceTracker
                 addItem={addSpendAC}
+                totalSum={totalSpends}
+                title={"Add spends"}
+                sum={spends}
+                removeItem={removeSpendAC}
             />
-            <ListOfLastSums sum={spends} removeItem={removeSpendAC}/>
+
+            {/*<Input*/}
+            {/*    title={"Add spends"}*/}
+            {/*    totalSum={totalSpends}*/}
+            {/*    addItem={addSpendAC}*/}
+            {/*/>*/}
+            {/*<ListOfLastSums sum={spends} removeItem={removeSpendAC}/>*/}
         </div>
     );
 };
+
 
 

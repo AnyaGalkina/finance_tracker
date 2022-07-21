@@ -9,10 +9,9 @@ import {AddSpendType} from "../../redux/spend-reducer";
 type PropsType = {
     addItem: (id: string, category: string, value: number, component: SvgComponentType) => AddIncomeType | AddSpendType;
     totalSum: TotalSumType[];
-    title: string;
 }
 
-const Input: React.FC<PropsType> = ({addItem, title, totalSum}) => {
+const Input: React.FC<PropsType> = ({addItem,totalSum}) => {
     const dispatch = useDispatch();
 
     const [value, setValue] = useState("");
@@ -38,7 +37,6 @@ const Input: React.FC<PropsType> = ({addItem, title, totalSum}) => {
 
     return (
         <div>
-            <h2>{title}</h2>
             <input
                 className={styles.input}
                 value={value}
