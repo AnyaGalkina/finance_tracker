@@ -3,6 +3,7 @@ import style from "./Header.module.css";
 import Nav from "../Nav/Nav";
 
 const Header: React.FC = () => {
+    console.log("Header")
     return (
         <div className={style.header}>
             <Nav />

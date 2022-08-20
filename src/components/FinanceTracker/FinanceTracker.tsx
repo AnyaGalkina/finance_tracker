@@ -1,29 +1,42 @@
-import React from "react";
-import Input from "../Input/Input";
-import {AddSpendType, RemoveSpendType, SumType} from "../../redux/spend-reducer";
+import React, {memo, useCallback} from "react";
+import Input from "../CommonInput/CommonInput";
+import {SumType} from "../../redux/spend-reducer";
 import ListOfLastSums from "../ListOfLastSum/ListOfLastSums";
 import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
-import {AddIncomeType, RemoveIncomeType} from "../../redux/income-reducer";
+import CommonInput from "../CommonInput/CommonInput";
 
 type PropsType = {
-    addItem: (id: string, category: string, value: number, component: SvgComponentType) => AddIncomeType | AddSpendType;
+    addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
     totalSum: TotalSumType[];
     title: string;
     sum: SumType[];
-    removeItem: (id: string, currentMoneySum: number) => RemoveSpendType |  RemoveIncomeType;
+    removeItem: (id: string, sum: number) => void;
 }
 
-export const FinanceTracker: React.FC<PropsType> = ({title, sum, removeItem, addItem, totalSum}) => {
+export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}: PropsType) => {
+    console.log("FinanceTracker");
+
+    const addItemHandler = useCallback( (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
+        addItem(categoryId, categoryName, sum, component)
+    }, [])
+
+    const removeItemHandler = useCallback((id: string, sum: number) => {
+        removeItem(id, sum);
+    }, [])
+
     return (
         <div>
             <h2>{title}</h2>
-            <Input
+            <CommonInput
                 totalSum={totalSum}
-                addItem={addItem}
+                addItem={addItemHandler}
             />
-            <ListOfLastSums sum={sum} removeItem={removeItem}/>
+            <ListOfLastSums
+                sum={sum}
+                removeItem={removeItemHandler}
+            />
         </div>
     );
-};
+})
 
 export default FinanceTracker;

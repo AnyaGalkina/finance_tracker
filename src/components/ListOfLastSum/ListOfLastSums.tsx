@@ -1,15 +1,19 @@
-import React from "react";
-import {RemoveSpendType, SumType} from "../../redux/spend-reducer";
+import React, {memo} from "react";
+import {SumType} from "../../redux/spend-reducer";
 import ListItem from "./ListItem/ListItem";
-import {RemoveIncomeType} from "../../redux/income-reducer";
 
 
 type PropsType = {
     sum: SumType[];
-    removeItem: (id: string, sum: number) => RemoveSpendType |  RemoveIncomeType;
+    removeItem: (id: string, sum: number) =>  void;
 }
 
-const ListOfLastSums: React.FC<PropsType> = ({sum, removeItem}) => {
+const ListOfLastSums = memo(({sum, removeItem }: PropsType) => {
+    console.log('ListOfLastSums');
+
+    const removeItemHandler = (id: string, sum: number) => {
+        removeItem(id, sum)
+    }
 
     return (
         <div>
@@ -21,7 +25,7 @@ const ListOfLastSums: React.FC<PropsType> = ({sum, removeItem}) => {
                         categoryName={s.categoryName}
                         component={s.component}
                         sum={s.sum}
-                        removeItem={removeItem}
+                        removeItem={removeItemHandler}
                         id={s.id}
                         categoryId={s.categoryId}
                     />
@@ -29,6 +33,6 @@ const ListOfLastSums: React.FC<PropsType> = ({sum, removeItem}) => {
             })}
         </div>
     )
-};
+});
 
 export default ListOfLastSums;

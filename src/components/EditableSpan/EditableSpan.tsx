@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState, KeyboardEvent} from "react";
+import React, {ChangeEvent, useState, KeyboardEvent, memo} from "react";
 
 type PropsType = {
     title: string;
@@ -6,7 +6,8 @@ type PropsType = {
     className: string
 }
 
-const EditableSpan: React.FC<PropsType> = ({title, changeTitleName, className}) => {
+const EditableSpan = memo(({title, changeTitleName, className}: PropsType) => {
+    console.log("EditableSpan")
     const [editMode, setEditMode] = useState(false);
     const [newTitle, setNewTitle] = useState(title);
 
@@ -47,6 +48,6 @@ const EditableSpan: React.FC<PropsType> = ({title, changeTitleName, className}) 
                 onClick={onClickHandler
                 }>{title}</span>
     );
-};
+});
 
 export default EditableSpan;

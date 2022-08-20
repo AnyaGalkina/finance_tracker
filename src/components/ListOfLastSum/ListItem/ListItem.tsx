@@ -1,12 +1,7 @@
-import React from "react";
+import React, {memo} from "react";
 import styles from "./ListItem.module.css";
 import {SvgIcon} from "@mui/material";
 import {SvgComponentType} from "../../../redux/totalSpends-reducer";
-import {useDispatch} from "react-redux";
-import {RemoveIncomeType} from "../../../redux/income-reducer";
-
-class RemoveSpendType {
-}
 
 type PropsType = {
     key: string;
@@ -15,18 +10,15 @@ type PropsType = {
     component: SvgComponentType;
     sum: number;
     categoryName: string;
-    removeItem: (id: string, sum: number) => RemoveSpendType |  RemoveIncomeType;
+    removeItem: (id: string, sum: number) =>  void
 }
 
-const ListItem: React.FC<PropsType> = ({
+const ListItem: React.FC<PropsType> = memo(({
                                            key, id, categoryName, component, sum, removeItem
 }) => {
-    const dispatch = useDispatch();
-
+    console.log("ListItem")
     const onClickHandler = () => {
-        //@ts-ignore
-        dispatch(removeItem(id, sum));
-        // removeSpend(s.id)
+        removeItem(id, sum)
     }
 
     return (
@@ -42,6 +34,6 @@ const ListItem: React.FC<PropsType> = ({
             <button onClick={onClickHandler}>X</button>
         </div>
     )
-}
+})
 
 export default ListItem;

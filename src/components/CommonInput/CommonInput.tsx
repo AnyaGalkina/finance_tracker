@@ -1,18 +1,15 @@
-import React, {ChangeEvent, useState} from "react";
-import IconList from "../IconList/IconList";
+import React, {ChangeEvent, memo, useCallback, useState} from "react";
+import IconList from "./IconList/IconList";
 import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
-import styles from "./Input.module.css";
-import {useDispatch} from "react-redux";
-import {AddIncomeType} from "../../redux/income-reducer";
-import {AddSpendType} from "../../redux/spend-reducer";
+import styles from "./CommonInput.module.css";
 
 type PropsType = {
-    addItem: (id: string, category: string, value: number, component: SvgComponentType) => AddIncomeType | AddSpendType;
+    addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
     totalSum: TotalSumType[];
 }
 
-const Input: React.FC<PropsType> = ({addItem,totalSum}) => {
-    const dispatch = useDispatch();
+const CommonInput = memo(({addItem,totalSum}: PropsType) => {
+    console.log("CommonInput")
 
     const [value, setValue] = useState("");
     const [error, setError] = useState(false);
@@ -22,16 +19,15 @@ const Input: React.FC<PropsType> = ({addItem,totalSum}) => {
         setValue(e.currentTarget.value);
     }
 
-    const addSumHandler = (categoryId: string, categoryName: string, component: SvgComponentType) => {
+    const addSumHandler = useCallback((categoryId: string, categoryName: string, component: SvgComponentType) => {
         if (+value > 0) {
-            dispatch(addItem(categoryId, categoryName, +value, component))
-            // dispatch(addSpendAC(id, category, +value, component))
+            addItem(categoryId, categoryName, +value, component)
             setValue("");
             setError(false);
         } else {
             setError(true);
         }
-    }
+    }, [value, error, addItem])
 
 
 
@@ -53,6 +49,6 @@ const Input: React.FC<PropsType> = ({addItem,totalSum}) => {
             </div>
         </div>
     );
-};
+});
 
-export default Input;
+export default CommonInput;
