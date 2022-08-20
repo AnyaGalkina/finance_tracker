@@ -28,6 +28,7 @@ import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import RestaurantIcon from "@mui/icons-material/Restaurant";
 import {OverridableComponent} from "@mui/material/OverridableComponent";
 import {SvgIconTypeMap} from "@mui/material/SvgIcon/SvgIcon";
+import {ActionType} from "./store";
 
 export type SvgComponentType = OverridableComponent<SvgIconTypeMap> & { muiName: string };
 export type TotalSumType = {
@@ -37,13 +38,11 @@ export type TotalSumType = {
     component: SvgComponentType;
     color: "primary" | "secondary" | "success" | "error";
 }
-export type ChangeCategoryNameType = ReturnType<typeof changeCategoryNameAC>;
-export type UpdateTotalSumType = ReturnType<typeof updateTotalSumAC>;
 
-type ActionType = ChangeCategoryNameType | UpdateTotalSumType;
 
 export const CHANGE_CATEGORY_NAME = "CHANGE_CATEGORY_NAME";
 export const UPDATE_TOTAL_SUM = "UPDATE_TOTAL_SUM ";
+
 
 const initialState: TotalSumType[] = [
     {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},

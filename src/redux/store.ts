@@ -1,9 +1,19 @@
 import {combineReducers, createStore} from "redux";
-import {spendsReducer} from "./spend-reducer";
-import {totalSpendReducer} from "./totalSpends-reducer";
+import {addSpendAC, removeSpendAC, spendsReducer} from "./spend-reducer";
+import {changeCategoryNameAC, totalSpendReducer, updateTotalSumAC} from "./totalSpends-reducer";
 import {totalIncomeReducer} from "./totalIncome-reducer";
-import {incomeReducer} from "./income-reducer";
+import {addIncomeAC, incomeReducer, removeIncomeAC} from "./income-reducer";
 import {availableMoneyReducer} from "./availableMoney-reducer";
+
+export type ActionType = ReturnType<typeof addSpendAC>
+    | ReturnType<typeof removeSpendAC>
+    // | ReturnType<typeof removeIncomeAC>
+    | ReturnType<typeof removeIncomeAC>
+    | ReturnType<typeof addIncomeAC>
+    | ReturnType<typeof changeCategoryNameAC>
+    | ReturnType<typeof updateTotalSumAC>;
+
+
 
 export type AppRootStateType = ReturnType<typeof rootReducer>
 

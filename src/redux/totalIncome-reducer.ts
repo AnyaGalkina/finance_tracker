@@ -6,14 +6,11 @@ import RedeemIcon from "@mui/icons-material/Redeem";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 import {
     CHANGE_CATEGORY_NAME,
-    ChangeCategoryNameType,
     TotalSumType,
     UPDATE_TOTAL_SUM,
-    UpdateTotalSumType
 } from "./totalSpends-reducer";
 import HelpSharpIcon from "@mui/icons-material/HelpSharp";
-
-type ActionType = ChangeCategoryNameType | UpdateTotalSumType ;
+import {ActionType} from "./store";
 
 
 const initialState: TotalSumType[] = [
@@ -26,16 +23,18 @@ const initialState: TotalSumType[] = [
 ];
 
 
-export const  totalIncomeReducer = (state: TotalSumType[] = initialState, action: ActionType): TotalSumType[] => {
+export const totalIncomeReducer = (state: TotalSumType[] = initialState, action: ActionType): TotalSumType[] => {
     switch (action.type) {
         case  CHANGE_CATEGORY_NAME:
-            debugger
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s
             );
         case UPDATE_TOTAL_SUM:
             return state.map(s =>
-                s.categoryId === action.payload.categoryId ? {...s, totalSum: (s.totalSum + action.payload.totalSum)} : s
+                s.categoryId === action.payload.categoryId ? {
+                    ...s,
+                    totalSum: (s.totalSum + action.payload.totalSum)
+                } : s
             )
         default:
             return state;

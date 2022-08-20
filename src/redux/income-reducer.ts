@@ -1,15 +1,10 @@
-import {CHANGE_CATEGORY_NAME, ChangeCategoryNameType, SvgComponentType} from "./totalSpends-reducer";
+import {CHANGE_CATEGORY_NAME, SvgComponentType} from "./totalSpends-reducer";
 import {SumType} from "./spend-reducer";
 import {v1} from "uuid";
+import {ActionType} from "./store";
 
 export const ADD_INCOME = "ADD_INCOME";
 export const REMOVE_INCOME = "REMOVE_INCOME";
-
-export type AddIncomeType = ReturnType<typeof addIncomeAC>;
-export type RemoveIncomeType = ReturnType<typeof removeIncomeAC>;
-
-
-type ActionType = AddIncomeType | RemoveIncomeType | ChangeCategoryNameType;
 
 export const initialState: SumType[] = [];
 
@@ -26,7 +21,6 @@ export const incomeReducer = (state: SumType[] = initialState, action: ActionTyp
             }
             return [...state, newIncome];
         case CHANGE_CATEGORY_NAME:
-            debugger
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s
             );
