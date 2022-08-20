@@ -1,9 +1,9 @@
 import React, {memo, useCallback} from "react";
-import Input from "../CommonInput/CommonInput";
 import {SumType} from "../../redux/spend-reducer";
 import ListOfLastSums from "../ListOfLastSum/ListOfLastSums";
 import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import CommonInput from "../CommonInput/CommonInput";
+import styles from "./FinanceTracker.module.css";
 
 type PropsType = {
     addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
@@ -25,15 +25,17 @@ export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}:
     }, [])
 
     return (
-        <div>
-            <h2>{title}</h2>
+        <div className={styles.mainBlock}>
+
             <CommonInput
                 totalSum={totalSum}
                 addItem={addItemHandler}
+                title={title}
             />
             <ListOfLastSums
                 sum={sum}
                 removeItem={removeItemHandler}
+                itemName={title}
             />
         </div>
     );

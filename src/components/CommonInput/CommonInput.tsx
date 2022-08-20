@@ -6,9 +6,10 @@ import styles from "./CommonInput.module.css";
 type PropsType = {
     addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
     totalSum: TotalSumType[];
+    title: string;
 }
 
-const CommonInput = memo(({addItem,totalSum}: PropsType) => {
+const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
     console.log("CommonInput")
 
     const [value, setValue] = useState("");
@@ -30,9 +31,9 @@ const CommonInput = memo(({addItem,totalSum}: PropsType) => {
     }, [value, error, addItem])
 
 
-
     return (
         <div>
+            <h2>Add {title}</h2>
             <input
                 className={styles.input}
                 value={value}

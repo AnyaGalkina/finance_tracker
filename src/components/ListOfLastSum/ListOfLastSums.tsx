@@ -6,9 +6,10 @@ import ListItem from "./ListItem/ListItem";
 type PropsType = {
     sum: SumType[];
     removeItem: (id: string, sum: number) =>  void;
+    itemName:string
 }
 
-const ListOfLastSums = memo(({sum, removeItem }: PropsType) => {
+const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
     console.log('ListOfLastSums');
 
     const removeItemHandler = (id: string, sum: number) => {
@@ -17,6 +18,7 @@ const ListOfLastSums = memo(({sum, removeItem }: PropsType) => {
 
     return (
         <div>
+            <h3>Last {itemName}</h3>
             {sum.map(s => {
 
                 return (
