@@ -1,0 +1,9 @@
+.mainBlock {
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    border-radius: 20%;
+    flex-wrap: wrap;
+    font-size: 2rem;
+
+}

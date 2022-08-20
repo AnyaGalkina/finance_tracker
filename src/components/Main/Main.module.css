@@ -16,20 +16,10 @@
     /*align-content: center;*/
 }
 
-.mainBlock {
-    width: 500px;
-    height: 400px;
-    background-color: pink;
-    border-radius: 20%;
-    flex-wrap: wrap;
-    font-size: 2rem;
-
-}
-
-.savings {
-    width: 800px;
-    height: 400px;
-    background-color: #c3e58b;
-    border-radius: 20%;
-    font-size: 2rem;
-}
+/*.savings {*/
+/*    width: 800px;*/
+/*    height: 400px;*/
+/*    background-color: #c3e58b;*/
+/*    border-radius: 20%;*/
+/*    font-size: 2rem;*/
+/*}*/
