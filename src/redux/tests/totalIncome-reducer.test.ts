@@ -1,4 +1,4 @@
-import {changeCategoryNameAC, increaseTotalSumAC, TotalSumType,} from "../totalSpends-reducer";
+import {changeCategoryNameAC, decreaseTotalSumAC, increaseTotalSumAC, TotalSumType,} from "../totalSpends-reducer";
 import {totalIncomeReducer} from "../totalIncome-reducer";
 import {salaryId, stocksIs} from "../categoryId";
 import WorkSharpIcon from "@mui/icons-material/WorkSharp";
@@ -22,11 +22,22 @@ test("category name should be changed", () => {
 
 })
 
-test("total sum should be updated", () => {
+test("total sum should be increased", () => {
 
     let newState = totalIncomeReducer(initState, increaseTotalSumAC(stocksIs, 600));
 
     expect(newState[1].totalSum).toBe(650);
+    expect(newState[0].totalSum).toBe(0);
+    expect(initState[1].totalSum).toBe(50);
+
+})
+
+
+test("total sum should be decreased", () => {
+
+    let newState = totalIncomeReducer(initState, decreaseTotalSumAC(stocksIs, 30));
+
+    expect(newState[1].totalSum).toBe(20);
     expect(newState[0].totalSum).toBe(0);
     expect(initState[1].totalSum).toBe(50);
 
