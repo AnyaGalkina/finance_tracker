@@ -1,7 +1,7 @@
-import {addIncomeAC, REMOVE_INCOME} from "./income-reducer";
-import {addSpendAC, REMOVE_SPEND} from "./spend-reducer";
-import {availableMoneyReducer, CurrentMoneyStateType } from "./availableMoney-reducer";
-import {depositId, petId} from "./categoryId";
+import {addIncomeAC, REMOVE_INCOME} from "../income-reducer";
+import {addSpendAC, REMOVE_SPEND} from "../spend-reducer";
+import {availableMoneyReducer, CurrentMoneyStateType } from "../availableMoney-reducer";
+import {depositId, petId} from "../categoryId";
 import PetsIcon from "@mui/icons-material/Pets";
 import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
 

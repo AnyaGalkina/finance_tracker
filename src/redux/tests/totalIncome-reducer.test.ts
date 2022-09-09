@@ -1,6 +1,6 @@
-import {changeCategoryNameAC, TotalSumType, updateTotalSumAC} from "./totalSpends-reducer";
-import {totalIncomeReducer} from "./totalIncome-reducer";
-import {salaryId, stocksIs} from "./categoryId";
+import {changeCategoryNameAC, increaseTotalSumAC, TotalSumType,} from "../totalSpends-reducer";
+import {totalIncomeReducer} from "../totalIncome-reducer";
+import {salaryId, stocksIs} from "../categoryId";
 import WorkSharpIcon from "@mui/icons-material/WorkSharp";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
 
@@ -24,7 +24,7 @@ test("category name should be changed", () => {
 
 test("total sum should be updated", () => {
 
-    let newState = totalIncomeReducer(initState, updateTotalSumAC(stocksIs, 600));
+    let newState = totalIncomeReducer(initState, increaseTotalSumAC(stocksIs, 600));
 
     expect(newState[1].totalSum).toBe(650);
     expect(newState[0].totalSum).toBe(0);

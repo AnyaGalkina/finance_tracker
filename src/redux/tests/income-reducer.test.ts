@@ -1,10 +1,10 @@
-import {SumType} from "./spend-reducer";
-import {depositId, salaryId, stocksIs} from "./categoryId";
+import {SumType} from "../spend-reducer";
+import {depositId, salaryId, stocksIs} from "../categoryId";
 import WorkSharpIcon from "@mui/icons-material/WorkSharp";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
-import {addIncomeAC, incomeReducer, removeIncomeAC} from "./income-reducer";
+import {addIncomeAC, incomeReducer, removeIncomeAC} from "../income-reducer";
 import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
-import {changeCategoryNameAC} from "./totalSpends-reducer";
+import {changeCategoryNameAC} from "../totalSpends-reducer";
 
 let initState: SumType[];
 

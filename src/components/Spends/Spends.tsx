@@ -2,8 +2,9 @@ import React, {useCallback} from "react";
 import {addSpendAC, removeSpendAC, SumType} from "../../redux/spend-reducer";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
-import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
+import {decreaseTotalSumAC, increaseTotalSumAC, SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import FinanceTracker from "../FinanceTracker/FinanceTracker";
+import ChartDounat from "../Chart/ChartDounat";
 
 export const Spends: React.FC = () => {
     console.log("Spends");
@@ -12,12 +13,17 @@ export const Spends: React.FC = () => {
     const dispatch = useDispatch();
 
     const addSpend = useCallback((categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
-        dispatch(addSpendAC(categoryId, categoryName, sum, component))}, [])
+        dispatch(addSpendAC(categoryId, categoryName, sum, component));
+        dispatch(increaseTotalSumAC(categoryId, sum))
+        },
+        [])
 
 
-    const removeSpend =  useCallback((id: string, sum: number) => {
-        dispatch(removeSpendAC(id, sum))
+    const removeSpend =  useCallback((categoryId: string, id: string, sum: number) => {
+        dispatch(removeSpendAC(id, sum));
+        dispatch(decreaseTotalSumAC(categoryId, sum));
     }, [])
+
 
     return (
         <div>
@@ -28,6 +34,7 @@ export const Spends: React.FC = () => {
                 sum={spends}
                 removeItem={removeSpend}
             />
+            <ChartDounat totalSum={totalSpends}/>
         </div>
     );
 };

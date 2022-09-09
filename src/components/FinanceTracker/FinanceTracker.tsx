@@ -10,7 +10,7 @@ type PropsType = {
     totalSum: TotalSumType[];
     title: string;
     sum: SumType[];
-    removeItem: (id: string, sum: number) => void;
+    removeItem: (categoryId: string, id: string, sum: number) => void;
 }
 
 export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}: PropsType) => {
@@ -20,8 +20,8 @@ export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}:
         addItem(categoryId, categoryName, sum, component)
     }, [])
 
-    const removeItemHandler = useCallback((id: string, sum: number) => {
-        removeItem(id, sum);
+    const removeItemHandler = useCallback((categoryId: string, id: string, sum: number) => {
+        removeItem(categoryId, id, sum);
     }, [])
 
     return (

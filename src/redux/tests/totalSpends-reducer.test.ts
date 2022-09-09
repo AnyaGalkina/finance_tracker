@@ -1,9 +1,9 @@
 import {
-    changeCategoryNameAC,
+    changeCategoryNameAC, increaseTotalSumAC,
     totalSpendReducer,
-    TotalSumType, updateTotalSumAC
-} from "./totalSpends-reducer";
-import {foodId, petId, travelId} from "./categoryId";
+    TotalSumType,
+} from "../totalSpends-reducer";
+import {foodId, petId, travelId} from "../categoryId";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import FlightIcon from "@mui/icons-material/Flight";
 import PetsIcon from "@mui/icons-material/Pets";
@@ -30,7 +30,7 @@ test("category name should be changed", () => {
 
 test("total sum should be updated", () => {
 
-    let newState = totalSpendReducer(initState, updateTotalSumAC(petId, 600));
+    let newState = totalSpendReducer(initState, increaseTotalSumAC(petId, 600));
 
     expect(newState[1].totalSum).toBe(700);
     expect(newState[0].totalSum).toBe(0);

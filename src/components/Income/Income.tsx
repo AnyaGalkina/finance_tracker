@@ -2,9 +2,10 @@ import React, {useCallback} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
 import {addIncomeAC, removeIncomeAC} from "../../redux/income-reducer";
-import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
+import {decreaseTotalSumAC, increaseTotalSumAC, SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import {SumType} from "../../redux/spend-reducer";
 import FinanceTracker from "../FinanceTracker/FinanceTracker";
+import ChartDounat from "../Chart/ChartDounat";
 
 const Income: React.FC = () => {
     console.log("Income");
@@ -15,21 +16,27 @@ const Income: React.FC = () => {
 
     const addIncome = useCallback((categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
         debugger
-        dispatch(addIncomeAC(categoryId, categoryName, sum, component))}, [])
+        dispatch(addIncomeAC(categoryId, categoryName, sum, component));
+        dispatch(increaseTotalSumAC(categoryId, sum));
+    }, [])
 
-    const removeIncome =  useCallback((id: string, sum: number) => {
-        dispatch(removeIncomeAC(id, sum))
+    const removeIncome =  useCallback((categoryId: string, id: string, sum: number) => {
+        dispatch(removeIncomeAC(id, sum));
+        dispatch(decreaseTotalSumAC(categoryId, sum));
     }, [])
 
 
     return (
-        <FinanceTracker
-            addItem={addIncome}
-            totalSum={totalIncome}
-            title={"income"}
-            sum={income}
-            removeItem={removeIncome}
-        />
+        <div>
+            <FinanceTracker
+                addItem={addIncome}
+                totalSum={totalIncome}
+                title={"income"}
+                sum={income}
+                removeItem={removeIncome}
+            />
+            <ChartDounat totalSum={totalIncome}/>
+        </div>
     );
 };
 

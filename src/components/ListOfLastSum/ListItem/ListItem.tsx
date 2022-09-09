@@ -10,15 +10,15 @@ type PropsType = {
     component: SvgComponentType;
     sum: number;
     categoryName: string;
-    removeItem: (id: string, sum: number) =>  void
+    removeItem: (categoryId: string, id: string, sum: number) =>  void
 }
 
 const ListItem: React.FC<PropsType> = memo(({
-                                           key, id, categoryName, component, sum, removeItem
+                                           key, id, categoryName, component, sum, removeItem, categoryId
 }) => {
     console.log("ListItem")
     const onClickHandler = () => {
-        removeItem(id, sum)
+        removeItem(categoryId, id, sum)
     }
 
     return (

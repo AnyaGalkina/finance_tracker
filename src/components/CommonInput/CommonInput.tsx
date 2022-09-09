@@ -2,6 +2,7 @@ import React, {ChangeEvent, memo, useCallback, useState} from "react";
 import IconList from "./IconList/IconList";
 import {SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import styles from "./CommonInput.module.css";
+// import Input from "./Input/Input";
 
 type PropsType = {
     addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
@@ -34,6 +35,7 @@ const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
     return (
         <div>
             <h2>Add {title}</h2>
+            {/*<Input addSumHandler={addSumHandler}/>*/}
             <input
                 className={styles.input}
                 value={value}

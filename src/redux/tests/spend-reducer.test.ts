@@ -1,9 +1,9 @@
-import {addSpendAC, removeSpendAC, spendsReducer, SumType} from "./spend-reducer";
-import {foodId, petId, travelId} from "./categoryId";
+import {addSpendAC, removeSpendAC, spendsReducer, SumType} from "../spend-reducer";
+import {foodId, petId, travelId} from "../categoryId";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import FlightIcon from "@mui/icons-material/Flight";
 import PetsIcon from "@mui/icons-material/Pets";
-import {changeCategoryNameAC} from "./totalSpends-reducer";
+import {changeCategoryNameAC} from "../totalSpends-reducer";
 
 let initState: SumType[];
 

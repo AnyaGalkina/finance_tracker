@@ -5,15 +5,15 @@ import ListItem from "./ListItem/ListItem";
 
 type PropsType = {
     sum: SumType[];
-    removeItem: (id: string, sum: number) =>  void;
+    removeItem: (categoryId: string, id: string, sum: number) =>  void;
     itemName:string
 }
 
 const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
     console.log('ListOfLastSums');
 
-    const removeItemHandler = (id: string, sum: number) => {
-        removeItem(id, sum)
+    const removeItemHandler = (categoryId: string, id: string, sum: number) => {
+        removeItem(categoryId, id, sum)
     }
 
     return (

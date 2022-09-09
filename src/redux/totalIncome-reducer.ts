@@ -4,11 +4,7 @@ import WorkSharpIcon from "@mui/icons-material/WorkSharp";
 import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
 import RedeemIcon from "@mui/icons-material/Redeem";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
-import {
-    CHANGE_CATEGORY_NAME,
-    TotalSumType,
-    UPDATE_TOTAL_SUM,
-} from "./totalSpends-reducer";
+import {CHANGE_CATEGORY_NAME, DECREASE_TOTAL_SUM, INCREASE_TOTAL_SUM, TotalSumType,} from "./totalSpends-reducer";
 import HelpSharpIcon from "@mui/icons-material/HelpSharp";
 import {ActionType} from "./store";
 
@@ -29,13 +25,20 @@ export const totalIncomeReducer = (state: TotalSumType[] = initialState, action:
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s
             );
-        case UPDATE_TOTAL_SUM:
+        case INCREASE_TOTAL_SUM:
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {
                     ...s,
                     totalSum: (s.totalSum + action.payload.totalSum)
                 } : s
-            )
+            );
+        case DECREASE_TOTAL_SUM:
+            return state.map(s =>
+                s.categoryId === action.payload.categoryId ? {
+                    ...s,
+                    totalSum: (s.totalSum - action.payload.totalSum)
+                } : s
+            );
         default:
             return state;
     }

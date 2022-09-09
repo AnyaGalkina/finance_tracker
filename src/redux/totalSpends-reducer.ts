@@ -41,12 +41,13 @@ export type TotalSumType = {
 
 
 export const CHANGE_CATEGORY_NAME = "CHANGE_CATEGORY_NAME";
-export const UPDATE_TOTAL_SUM = "UPDATE_TOTAL_SUM ";
+export const INCREASE_TOTAL_SUM = "INCREASE_TOTAL_SUM";
+export const DECREASE_TOTAL_SUM= "DECREASE_TOTAL_SUM";
 
 
 const initialState: TotalSumType[] = [
-    {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
-    {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 0, component: RestaurantIcon, color:  "error"},
+    {categoryId: foodId, categoryName: "Food", totalSum: 2, component: FastfoodIcon, color: "primary"},
+    {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 6, component: RestaurantIcon, color:  "error"},
     {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
     {categoryId: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "success"},
     {categoryId: petId, categoryName: "Pet", totalSum: 0, component: PetsIcon, color: "primary"},
@@ -67,10 +68,17 @@ export const totalSpendReducer = (state: TotalSumType[] = initialState, action: 
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s
             );
-        case UPDATE_TOTAL_SUM:
+        case INCREASE_TOTAL_SUM:
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, totalSum: (s.totalSum + action.payload.totalSum)} : s
-            )
+            );
+        case DECREASE_TOTAL_SUM:
+            return state.map(s =>
+                s.categoryId === action.payload.categoryId ? {
+                    ...s,
+                    totalSum: (s.totalSum - action.payload.totalSum)
+                } : s
+            );
         default:
             return state;
     }
@@ -87,9 +95,18 @@ export const changeCategoryNameAC = (categoryId: string,categoryName: string) =>
     } as const
 }
 
-export const updateTotalSumAC = (categoryId: string, totalSum: number) => {
+export const increaseTotalSumAC = (categoryId: string, totalSum: number) => {
     return {
-        type: UPDATE_TOTAL_SUM,
+        type: INCREASE_TOTAL_SUM,
+        payload: {
+            categoryId,
+            totalSum
+        }
+    } as const
+}
+export const decreaseTotalSumAC = (categoryId: string, totalSum: number) => {
+    return {
+        type: DECREASE_TOTAL_SUM,
         payload: {
             categoryId,
             totalSum
