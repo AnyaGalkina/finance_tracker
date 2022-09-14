@@ -11,7 +11,6 @@ export type SumType = {
     categoryName: string;
     sum: number;
     component: SvgComponentType
-
 }
 
 export const initialState: SumType[] = [];
@@ -20,14 +19,17 @@ export const initialState: SumType[] = [];
 export const spendsReducer = (state: SumType[] = initialState, action: ActionType): SumType[] => {
     switch (action.type) {
         case ADD_SPEND:
-            let newSpend = {
-                categoryId: action.payload.categoryId,
-                id: action.payload.id,
-                categoryName: action.payload.categoryName,
-                sum: action.payload.sum,
-                component: action.payload.component
+            if(action.payload) {
+                let newSpend = {
+                    categoryId: action.payload.categoryId,
+                    id: action.payload.id,
+                    categoryName: action.payload.categoryName,
+                    sum: action.payload.sum,
+                    component: action.payload.component
+                }
+                return [...state, newSpend];
             }
-            return [...state, newSpend];
+            return state
         case CHANGE_CATEGORY_NAME:
             return state.map(s =>
                 s.categoryId === action.payload.categoryId ? {...s, categoryName: action.payload.categoryName} : s

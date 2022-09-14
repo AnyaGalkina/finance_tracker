@@ -1,4 +1,4 @@
-import React, {memo} from "react";
+import React, {memo, useCallback} from "react";
 import {SumType} from "../../redux/spend-reducer";
 import ListItem from "./ListItem/ListItem";
 
@@ -12,9 +12,9 @@ type PropsType = {
 const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
     console.log('ListOfLastSums');
 
-    const removeItemHandler = (categoryId: string, id: string, sum: number) => {
+    const removeItemHandler = useCallback((categoryId: string, id: string, sum: number) => {
         removeItem(categoryId, id, sum)
-    }
+    },[])
 
     return (
         <div>

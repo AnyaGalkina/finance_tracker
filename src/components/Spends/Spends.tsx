@@ -4,7 +4,6 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
 import {decreaseTotalSumAC, increaseTotalSumAC, SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import FinanceTracker from "../FinanceTracker/FinanceTracker";
-import ChartDounat from "../Chart/ChartDounat";
 
 export const Spends: React.FC = () => {
     console.log("Spends");
@@ -34,10 +33,6 @@ export const Spends: React.FC = () => {
                 sum={spends}
                 removeItem={removeSpend}
             />
-            <ChartDounat totalSum={totalSpends}/>
         </div>
     );
 };
-
-
-

@@ -4,7 +4,6 @@ import {SvgIcon} from "@mui/material";
 import {SvgComponentType} from "../../../redux/totalSpends-reducer";
 
 type PropsType = {
-    key: string;
     categoryId: string;
     id: string;
     component: SvgComponentType;
@@ -14,7 +13,7 @@ type PropsType = {
 }
 
 const ListItem: React.FC<PropsType> = memo(({
-                                           key, id, categoryName, component, sum, removeItem, categoryId
+                                                id, categoryName, component, sum, removeItem, categoryId
 }) => {
     console.log("ListItem")
     const onClickHandler = () => {
@@ -22,11 +21,10 @@ const ListItem: React.FC<PropsType> = memo(({
     }
 
     return (
-        <div key={key} className={styles.list}>
+        <div className={styles.list}>
             <SvgIcon
                 component={component}
                 inheritViewBox
-                // color={s.color}
             />
 
             <span>{categoryName}</span>

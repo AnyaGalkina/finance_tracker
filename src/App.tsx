@@ -9,7 +9,6 @@ import AvailableMoneyTracker from "./components/AvailableMoneyTracker/AvailableM
 
 
 function App() {
-
     return (
         <div className="App">
             <Header/>

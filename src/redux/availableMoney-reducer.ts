@@ -6,7 +6,9 @@ export type CurrentMoneyStateType = {
     currentMoneySum: number
 }
 
-let initState = {currentMoneySum: 0};
+let initState = {
+    currentMoneySum: 0
+};
 
 export const availableMoneyReducer = (state: CurrentMoneyStateType = initState, action: ActionType): CurrentMoneyStateType => {
     switch (action.type) {

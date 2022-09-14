@@ -1,13 +1,13 @@
-import {combineReducers, createStore} from "redux";
+import {combineReducers,legacy_createStore as createStore} from "redux";
 import {addSpendAC, removeSpendAC, spendsReducer} from "./spend-reducer";
 import {changeCategoryNameAC, decreaseTotalSumAC, increaseTotalSumAC, totalSpendReducer} from "./totalSpends-reducer";
 import {totalIncomeReducer} from "./totalIncome-reducer";
 import {addIncomeAC, incomeReducer, removeIncomeAC} from "./income-reducer";
 import {availableMoneyReducer} from "./availableMoney-reducer";
+import {loadState, saveState} from "../utiles/local-storage";
 
 export type ActionType = ReturnType<typeof addSpendAC>
     | ReturnType<typeof removeSpendAC>
-    // | ReturnType<typeof removeIncomeAC>
     | ReturnType<typeof removeIncomeAC>
     | ReturnType<typeof addIncomeAC>
     | ReturnType<typeof changeCategoryNameAC>
@@ -28,5 +28,10 @@ const rootReducer = combineReducers({
 
 export const store = createStore(rootReducer);
 
+
+// export const store = createStore(rootReducer, loadState());
+store.subscribe(() => {
+    saveState(store.getState())
+})
 //@ts-ignore
 window.store = store;

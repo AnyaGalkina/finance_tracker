@@ -7,7 +7,6 @@ import MainItem from "./MainItem/MainItem";
 
 
 const Main = () => {
-
     return (
         <div className={styles.containerBlock}>
             <div className={styles.container}>

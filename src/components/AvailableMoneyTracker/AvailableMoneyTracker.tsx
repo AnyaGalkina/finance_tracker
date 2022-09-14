@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "../../redux/store";
 
 const AvailableMoneyTracker: React.FC = () => {
-    console.log("AvailableMoneyTracker");
     const currentMoneySum = useSelector<AppRootStateType, number>(state => state.availableMoney.currentMoneySum);
 
     return (

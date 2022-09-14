@@ -5,7 +5,6 @@ import {addIncomeAC, removeIncomeAC} from "../../redux/income-reducer";
 import {decreaseTotalSumAC, increaseTotalSumAC, SvgComponentType, TotalSumType} from "../../redux/totalSpends-reducer";
 import {SumType} from "../../redux/spend-reducer";
 import FinanceTracker from "../FinanceTracker/FinanceTracker";
-import ChartDounat from "../Chart/ChartDounat";
 
 const Income: React.FC = () => {
     console.log("Income");
@@ -15,7 +14,6 @@ const Income: React.FC = () => {
     const dispatch = useDispatch();
 
     const addIncome = useCallback((categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
-        debugger
         dispatch(addIncomeAC(categoryId, categoryName, sum, component));
         dispatch(increaseTotalSumAC(categoryId, sum));
     }, [])
@@ -35,7 +33,6 @@ const Income: React.FC = () => {
                 sum={income}
                 removeItem={removeIncome}
             />
-            <ChartDounat totalSum={totalIncome}/>
         </div>
     );
 };
