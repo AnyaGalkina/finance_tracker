@@ -46,8 +46,8 @@ export const DECREASE_TOTAL_SUM= "DECREASE_TOTAL_SUM";
 
 
 const initialState: TotalSumType[] = [
-    {categoryId: foodId, categoryName: "Food", totalSum: 2, component: FastfoodIcon, color: "primary"},
-    {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 6, component: RestaurantIcon, color:  "error"},
+    {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
+    {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 0, component: RestaurantIcon, color:  "error"},
     {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
     {categoryId: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "success"},
     {categoryId: petId, categoryName: "Pet", totalSum: 0, component: PetsIcon, color: "primary"},
