@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/finance_tracker/static/css/main.fb26cd05.css",
-    "main.js": "/finance_tracker/static/js/main.d3c3c656.js",
+    "main.css": "/finance_tracker/static/css/main.404e241a.css",
+    "main.js": "/finance_tracker/static/js/main.c7af68e7.js",
     "static/js/787.3523ed75.chunk.js": "/finance_tracker/static/js/787.3523ed75.chunk.js",
     "static/media/Wavy_Bus-41_Single-05.jpg": "/finance_tracker/static/media/Wavy_Bus-41_Single-05.da003265869af2ef0376.jpg",
     "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.22850e1953b1f93295db.jpg",
     "static/media/incomeImg.jpg": "/finance_tracker/static/media/incomeImg.dbc0e9c86c62f3e83029.jpg",
     "index.html": "/finance_tracker/index.html",
-    "main.fb26cd05.css.map": "/finance_tracker/static/css/main.fb26cd05.css.map",
-    "main.d3c3c656.js.map": "/finance_tracker/static/js/main.d3c3c656.js.map",
+    "main.404e241a.css.map": "/finance_tracker/static/css/main.404e241a.css.map",
+    "main.c7af68e7.js.map": "/finance_tracker/static/js/main.c7af68e7.js.map",
     "787.3523ed75.chunk.js.map": "/finance_tracker/static/js/787.3523ed75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb26cd05.css",
-    "static/js/main.d3c3c656.js"
+    "static/css/main.404e241a.css",
+    "static/js/main.c7af68e7.js"
   ]
 }
