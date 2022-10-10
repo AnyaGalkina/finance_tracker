@@ -1,0 +1,10 @@
+.input {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
