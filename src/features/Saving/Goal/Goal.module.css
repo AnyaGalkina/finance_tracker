@@ -1,0 +1,58 @@
+.mainGoalContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.achievedContainer {
+    width: 290px;
+    border: #71c68d solid 2px;
+    border-radius: 8px;
+    margin: 5px 0;
+
+}
+
+.goalContainer {
+    width: 290px;
+    /*margin: 10px;*/
+    margin: 5px 0;
+
+}
+
+.target {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.achievedText {
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #71c68d;
+}
+
+.imgContainer {
+    width: 290px;
+    height: 290px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*text-align: center;*/
+}
+
+@media screen and (max-width: 810px ) {
+    .mainGoalContainer {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    /*.*/
+}

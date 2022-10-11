@@ -18,15 +18,17 @@ export const Saving = () => {
     return (
         <div>
             <div>
-                {/*<h2>Set automatic saving</h2>*/}
                 <h2>My gaols</h2>
 
                 {goals.map(g => {
-                    return (<Gaol key={g.goalId} goal={g}/>)
+                    return (
+                        <Gaol key={g.goalId} goal={g}/>
+                    )
                 })}
 
-                <p>Start saving now</p>
-                <Button onClick={onAddGoalClickHandler}>Add new goal</Button>
+
+                <h3>Start saving now</h3>
+                <Button onClick={onAddGoalClickHandler} variant={"contained"}>Add new goal</Button>
             </div>
         </div>
     );
