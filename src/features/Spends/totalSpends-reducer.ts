@@ -46,19 +46,27 @@ export const DECREASE_TOTAL_SUM= "DECREASE_TOTAL_SUM";
 
 
 const initialState: TotalSumType[] = [
-    {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
+    {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "success"},
     {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 0, component: RestaurantIcon, color:  "error"},
-    {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
-    {categoryId: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "success"},
+    {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon,
+        //@ts-ignore
+        color: "info"},
+    {categoryId: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon,
+        //@ts-ignore
+        color: "warning"},
     {categoryId: petId, categoryName: "Pet", totalSum: 0, component: PetsIcon, color: "primary"},
     {categoryId: houseId, categoryName: "House", totalSum: 0, component: HouseIcon, color: "secondary"},
     {categoryId: healthCareId, categoryName: "Health care", totalSum: 0, component: VaccinesIcon, color: "error"},
-    {categoryId: clothesId, categoryName: "Shopping", totalSum: 0, component: CheckroomIcon, color: "secondary"},
-    {categoryId: kidsId, categoryName: "Kids", totalSum: 0, component: ChildFriendlyIcon, color: "primary"},
-    {categoryId: sportId, categoryName: "Sport", totalSum: 0, component: FitnessCenterIcon, color: "secondary"},
+    {categoryId: clothesId, categoryName: "Shopping", totalSum: 0, component: CheckroomIcon, color: "success"},
+    {categoryId: kidsId, categoryName: "Kids", totalSum: 0, component: ChildFriendlyIcon,
+        //@ts-ignore
+        color: "warning"},
+    {categoryId: sportId, categoryName: "Sport", totalSum: 0, component: FitnessCenterIcon,
+    //@ts-ignore
+    color: "info"},
     {categoryId: giftsId, categoryName: "Gifts", totalSum: 0, component: CelebrationSharpIcon, color: "error"},
     {categoryId: creditsId, categoryName: "Credits", totalSum: 0, component: AccountBalanceIcon, color: "primary"},
-    {categoryId: otherExpanseId, categoryName: "Other", totalSum: 0, component: HelpSharpIcon, color: "primary"},
+    {categoryId: otherExpanseId, categoryName: "Other", totalSum: 0, component: HelpSharpIcon, color: "secondary"},
 ];
 
 

@@ -6,18 +6,20 @@ import reportWebVitals from "./reportWebVitals";
 import {HashRouter} from "react-router-dom";
 import {store} from "./app/redux/store";
 import {Provider} from "react-redux";
+import {theme} from "./app/theme";
+import {ThemeProvider} from "@mui/material";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
-    // <React.StrictMode>
     <HashRouter>
-        <Provider store={store}>
-            <App/>
-        </Provider>
+        <ThemeProvider theme={theme}>
+            <Provider store={store}>
+                <App/>
+            </Provider>
+        </ThemeProvider>
     </HashRouter>
-    // </React.StrictMode>
 );
 
 reportWebVitals();
