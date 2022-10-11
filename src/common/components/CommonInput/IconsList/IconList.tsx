@@ -57,6 +57,8 @@ export const IconItem = memo(({addSum, totalSum}: IconItemPropsType) => {
                 className={styles.title}
                 title={categoryName}
                 changeTitleName={changeCategoryNameHandler}
+                maxSymbols={25}
+                label={null}
             ></EditableSpan>
         </div>
 

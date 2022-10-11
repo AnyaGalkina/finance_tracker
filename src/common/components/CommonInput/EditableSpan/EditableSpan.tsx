@@ -1,17 +1,26 @@
 import React, {ChangeEvent, useState, KeyboardEvent, memo} from "react";
+import {TextField} from "@mui/material";
 
 type PropsType = {
     title: string;
     changeTitleName: (category: string) => void;
-    className: string
+    className: string;
+    maxSymbols: number;
+    label: string | null
 }
 
-const EditableSpan = memo(({title, changeTitleName, className}: PropsType) => {
+const EditableSpan = memo(({title, changeTitleName, className, maxSymbols, label}: PropsType) => {
     const [editMode, setEditMode] = useState(false);
     const [newTitle, setNewTitle] = useState(title);
+    const [error, setError] = useState("");
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setNewTitle(e.currentTarget.value);
+        if (e.currentTarget.value.length <= maxSymbols) {
+            setNewTitle(e.currentTarget.value);
+            setError("");
+        } else {
+            setError("Max " + maxSymbols + " symbols")
+        }
     }
 
     const renameCategory = () => {
@@ -35,13 +44,20 @@ const EditableSpan = memo(({title, changeTitleName, className}: PropsType) => {
 
     return (
         editMode
-            ? <input
-                className={className}
-                onChange={onChangeHandler}
-                onKeyDown={onKeyDownHandler}
-                onBlur={onBlurHandler}
-                autoFocus
-            />
+            ?
+            <div className={className}>
+                <TextField
+                    label={label}
+                    variant="standard"
+                    size="small"
+                    value={newTitle}
+                    onChange={onChangeHandler}
+                    onKeyDown={onKeyDownHandler}
+                    onBlur={onBlurHandler}
+                    autoFocus
+                />
+                {error && <div style={{color: "red"}}>{error}</div>  }
+            </div>
             : <span
                 className={className}
                 onClick={onClickHandler
