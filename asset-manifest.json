@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/finance_tracker/static/css/main.404e241a.css",
-    "main.js": "/finance_tracker/static/js/main.c7af68e7.js",
+    "main.css": "/finance_tracker/static/css/main.e7ce8760.css",
+    "main.js": "/finance_tracker/static/js/main.4d19d509.js",
     "static/js/787.3523ed75.chunk.js": "/finance_tracker/static/js/787.3523ed75.chunk.js",
-    "static/media/Wavy_Bus-41_Single-05.jpg": "/finance_tracker/static/media/Wavy_Bus-41_Single-05.da003265869af2ef0376.jpg",
-    "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.22850e1953b1f93295db.jpg",
-    "static/media/incomeImg.jpg": "/finance_tracker/static/media/incomeImg.dbc0e9c86c62f3e83029.jpg",
+    "static/media/save.jpg": "/finance_tracker/static/media/save.8ec19ed76391b59442b1.jpg",
+    "static/media/target.jpg": "/finance_tracker/static/media/target.0ee4eaf85ef01634de29.jpg",
+    "static/media/10089.jpg": "/finance_tracker/static/media/10089.2720ab7bfce86e632eca.jpg",
+    "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.996f7229cebf8029b270.jpg",
+    "static/media/incomeImg.jpg": "/finance_tracker/static/media/incomeImg.81d2ba7f0efb2bc77419.jpg",
     "index.html": "/finance_tracker/index.html",
-    "main.404e241a.css.map": "/finance_tracker/static/css/main.404e241a.css.map",
-    "main.c7af68e7.js.map": "/finance_tracker/static/js/main.c7af68e7.js.map",
+    "main.e7ce8760.css.map": "/finance_tracker/static/css/main.e7ce8760.css.map",
+    "main.4d19d509.js.map": "/finance_tracker/static/js/main.4d19d509.js.map",
     "787.3523ed75.chunk.js.map": "/finance_tracker/static/js/787.3523ed75.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.404e241a.css",
-    "static/js/main.c7af68e7.js"
+    "static/css/main.e7ce8760.css",
+    "static/js/main.4d19d509.js"
   ]
 }
