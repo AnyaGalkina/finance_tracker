@@ -1,9 +1,9 @@
 import {v1} from "uuid";
 import {ActionType} from "../../app/redux/store";
 
-const SET_NEW_GOAL = "SET_NEW_GOAL";
-const UPDATE_GOAL_CURRENT_SUM = "UPDATE_GOAL_CURRENT_SUM";
-const DELETE_GOAL = "DELETE_GOAL";
+export const SET_NEW_GOAL = "SET_NEW_GOAL";
+export const UPDATE_GOAL_CURRENT_SUM = "UPDATE_GOAL_CURRENT_SUM";
+export const DELETE_GOAL = "DELETE_GOAL";
 
 export const initialState = [];
 
@@ -28,7 +28,7 @@ export const savingReducer = (state: Array<GoalType> = initialState, action: Act
             return [...state, newGoal];
         case UPDATE_GOAL_CURRENT_SUM:
             return state.map(g => g.goalId === action.payload.goalId
-                ? {...g, goalCurrentSum: action.payload.goalCurrentSum, isAchieved: action.payload.isAchieved} : g);
+                ? {...g, goalCurrentSum: (g.goalCurrentSum + action.payload.sum), isAchieved: action.payload.isAchieved} : g);
         case DELETE_GOAL:
             debugger
             return state.filter(g => g.goalId !== action.payload.goalId);
@@ -45,10 +45,10 @@ export const setNewGoal = (goalTitle: string, goalObjSum: number) => {
     } as const
 }
 
-export const updateGoalCurrentSum = (goalId: string, goalCurrentSum: number, isAchieved: boolean) => {
+export const updateGoalCurrentSum = (goalId: string, sum: number, isAchieved: boolean) => {
     return {
         type: UPDATE_GOAL_CURRENT_SUM,
-        payload: {goalId, goalCurrentSum, isAchieved}
+        payload: {goalId, sum, isAchieved}
     } as const
 }
 
