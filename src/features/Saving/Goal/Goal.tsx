@@ -1,4 +1,4 @@
-import {deleteGoal, GoalType, updateGoalCurrentSum} from "../saving-reducer";
+import {GoalType, updateGoalCurrentSum} from "../saving-reducer";
 import {Button, TextField} from "@mui/material";
 import React, {ChangeEvent, useState} from "react";
 import {useDispatch} from "react-redux";
@@ -28,7 +28,7 @@ export const Gaol = ({goal}: PropsType) => {
     }
 
     const onAddClickHandler = () => {
-        let newSavingSum = +currentSum + goal.goalCurrentSum;
+        let newSavingSum = +currentSum;
         let isAchieved = newSavingSum >= goal.goalObjSum;
         dispatch(updateGoalCurrentSum(goal.goalId, newSavingSum, isAchieved));
         setCurrentSum("");
