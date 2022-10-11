@@ -15,7 +15,6 @@ type PropsType = {
 }
 
 export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}: PropsType) => {
-    console.log("FinanceTracker");
 
     const addItemHandler = useCallback( (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
         addItem(categoryId, categoryName, sum, component)
@@ -32,7 +31,7 @@ export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}:
                 addItem={addItemHandler}
                 title={title}
             />
-            <div>
+            <div className={styles.chartBlock}>
                 <ListOfLastSums
                     sum={sum}
                     removeItem={removeItemHandler}

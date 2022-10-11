@@ -15,17 +15,19 @@ import {NewGoal} from "../features/Saving/NewGoal/NewGoal";
 function App() {
     return (
         <div className="App">
-            <Header/>
-            <AvailableMoneyTracker/>
-            <Routes>
-                <Route path={"/"} element={<Main/>}></Route>
-                <Route path={ROUTES.SPENDS} element={<Spends/>}></Route>
-                <Route path={ROUTES.INCOME} element={<Income/>}></Route>
-                <Route path={ROUTES.SAVINGS} element={<Saving/>}></Route>
-                <Route path={ROUTES.NEW_GOAL} element={<NewGoal/>}></Route>
-                <Route path={ROUTES.PAGE_NOT_FOUND} element={<PageNotFound/>}></Route>
-                <Route path={"/*"} element={<Navigate to={ROUTES.PAGE_NOT_FOUND}/>}></Route>
-            </Routes>
+            <div className="Container">
+                <Header/>
+                <AvailableMoneyTracker/>
+                <Routes>
+                    <Route path={"/"} element={<Main/>}></Route>
+                    <Route path={ROUTES.SPENDS} element={<Spends/>}></Route>
+                    <Route path={ROUTES.INCOME} element={<Income/>}></Route>
+                    <Route path={ROUTES.SAVINGS} element={<Saving/>}></Route>
+                    <Route path={ROUTES.NEW_GOAL} element={<NewGoal/>}></Route>
+                    <Route path={ROUTES.PAGE_NOT_FOUND} element={<PageNotFound/>}></Route>
+                    <Route path={"/*"} element={<Navigate to={ROUTES.PAGE_NOT_FOUND}/>}></Route>
+                </Routes>
+            </div>
         </div>
     );
 }

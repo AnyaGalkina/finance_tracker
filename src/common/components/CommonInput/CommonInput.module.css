@@ -1,10 +1,26 @@
+/*.commonInputContainer {*/
+/*    width: 50%;*/
+/*}*/
+
 .input {
     margin-bottom: 20px;
     font-size: 16px;
 }
 
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+.error {
+    color: red;
+    height: 35px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 820px) {
+    .commonInputContainer {
+        width: 100%
+    }
 }

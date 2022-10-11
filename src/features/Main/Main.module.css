@@ -1,25 +1,14 @@
 .containerBlock {
-    max-width: 1000px;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin: 0 auto;
-    /*align-content: center;*/
 }
 
 .container {
-    max-width: 1000px;
+    width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /*margin: 0 auto;*/
-    /*align-content: center;*/
 }
-
-/*.savings {*/
-/*    width: 800px;*/
-/*    height: 400px;*/
-/*    background-color: #c3e58b;*/
-/*    border-radius: 20%;*/
-/*    font-size: 2rem;*/
-/*}*/

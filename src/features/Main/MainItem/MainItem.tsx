@@ -11,17 +11,20 @@ type PropsType = {
 const MainItem: React.FC<PropsType> = ({itemTitle, path, img}) => {
     const navigate = useNavigate();
 
+    const onClickHandler = () => {
+        navigate(path)
+    }
+
     return (
-        <div
-            className={styles.mainBlock}
-             style={{
-                 backgroundImage: `url(${img})`, backgroundPosition: "center",
-                 backgroundSize: "cover",
-             }}
-             onClick={() => {
-                 navigate(path)
-             }}
-        >{itemTitle}
+        <div className={styles.mainItemContainer} onClick={onClickHandler}>
+            <div className={styles.title}>{itemTitle}</div>
+            <div
+                className={styles.mainItemBlock}
+                style={{
+                    backgroundImage: `url(${img})`, backgroundPosition: "center",
+                    backgroundSize: "cover",
+                }}>
+            </div>
         </div>
     );
 };

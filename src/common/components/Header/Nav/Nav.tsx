@@ -11,7 +11,6 @@ const Nav: React.FC = () => {
             <NavLink className={style.link} to={ROUTES.SPENDS}>Spends</NavLink>
             <NavLink className={style.link} to={ROUTES.INCOME}>Income</NavLink>
             <NavLink className={style.link} to={ROUTES.SAVINGS}>Savings</NavLink>
-            <NavLink className={style.link} to={ROUTES.NEW_GOAL}>goal</NavLink>
         </div>
     );
 };
