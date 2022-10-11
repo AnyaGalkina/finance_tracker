@@ -45,7 +45,7 @@ const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
 
             <div className={styles.input}>
                 <TextField
-                    label={title}
+                    label={null}
                     variant="outlined"
                     size="small"
                     value={value}

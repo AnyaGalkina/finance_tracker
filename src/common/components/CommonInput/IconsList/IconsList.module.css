@@ -9,7 +9,7 @@
 .img {
     display: flex;
     flex-direction: column;
-    width: 110px;
+    width: 100px;
     align-items: center;
 }
 

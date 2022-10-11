@@ -1,7 +1,7 @@
 import React, {memo} from "react";
 import {SvgIcon} from "@mui/material";
 import {changeCategoryNameAC, SvgComponentType, TotalSumType} from "../../../../features/Spends/totalSpends-reducer";
-import EditableSpan from "../EditableSpan/EditableSpan";
+import EditableSpan from "../../EditableSpan/EditableSpan";
 import styles from "./IconsList.module.css";
 import {useDispatch} from "react-redux";
 

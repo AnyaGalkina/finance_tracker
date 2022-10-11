@@ -3,6 +3,7 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
 import {Doughnut} from "react-chartjs-2";
 import {TotalSumType} from "../../../features/Spends/totalSpends-reducer";
 import styles from "./ChartDounat.module.css";
+import {Bar} from "react-chartjs-2/dist/typedCharts";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -12,7 +13,6 @@ type PropsType =  {
 
 const ChartDounat = memo(( {totalSum}: PropsType) => {
 
-    console.log("Chart")
     type DataChartType = {
         labels: string[];
         datasets: DatasetsType[];
@@ -58,14 +58,14 @@ const ChartDounat = memo(( {totalSum}: PropsType) => {
                         "rgba(255, 206, 86, 0.2)",
                         "rgba(75, 192, 192, 0.2)",
                         "rgba(153, 102, 255, 0.2)",
-                        "rgba(255, 159, 64, 0.2)",
-                        "rgba(255, 20, 64, 1)",
-                        "rgba(25, 159, 4, 1)",
-                        "rgba(205, 159, 164, 1)",
-                        "rgba(55, 59, 64, 1)",
-                        "rgba(80, 19, 64, 1)",
-                        "rgba(25, 59, 4, 1)",
-                        "rgba(175, 99, 64, 1)",
+                        "rgb(246, 219, 198)",
+                        "rgb(255, 181, 255)",
+                        "rgb(194, 255, 194 )",
+                        "rgba(0, 63, 125, 0.3)",
+                        "rgb(217, 217, 217)",
+                        "rgba(125, 0, 44, 0.3)",
+                        "rgb(119, 187, 175, 0.8)",
+                        "rgba(175, 99, 64, 0.2)",
                     ],
                     borderColor: [
                         "rgba(255, 99, 132, 1)",
@@ -75,13 +75,13 @@ const ChartDounat = memo(( {totalSum}: PropsType) => {
                         "rgba(153, 102, 255, 1)",
                         "rgba(255, 158, 64, 1)",
 
-                        "rgba(255, 20, 64, 1)",
-                        "rgba(25, 159, 4, 1)",
-                        "rgba(205, 159, 164, 1)",
-                        "rgba(55, 59, 64, 1)",
-                        "rgba(80, 19, 64, 1)",
-                        "rgba(25, 59, 4, 1)",
-                        "rgba(175, 99, 64, 1)",
+                        "rgb(155, 107, 179)",
+                        "rgb(136, 179, 136)",
+                        "rgba(0, 63, 125, 1)",
+                        "rgba(55, 59, 64, 0.2)",
+                        "rgba(125, 0, 44, 0.8)",
+                        "rgb(40, 163, 148)",
+                        "rgba(175, 99, 64, 0.8)",
                     ],
                     borderWidth: 1,
                 },

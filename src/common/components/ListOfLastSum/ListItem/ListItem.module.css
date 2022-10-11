@@ -1,7 +1,30 @@
 .list {
-    width: 350px;
+    /*width: 50%px;*/
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0 auto;
+}
+
+
+
+.title{
+    margin-left: 15px;
+    width: 45%;
+    text-align: left;
+}
+
+.sum{
+    width: 30%;
+    text-align: left;
+}
+
+.button {
+    color: white;
+    background-color: #d0b6e4;
+    font-weight: bolder;
+    font-size: large;
+    border-radius: 5px;
+    border-color: #796dc4;
+    margin-bottom: 2px;
 }

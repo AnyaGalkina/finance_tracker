@@ -32,12 +32,12 @@ export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}:
                 title={title}
             />
             <div className={styles.chartBlock}>
+                {sum.length < 1 ? <div><span>You dont have {title} yet.</span></div> :  <ChartDounat totalSum={totalSum}/> }
                 <ListOfLastSums
                     sum={sum}
                     removeItem={removeItemHandler}
                     itemName={title}
                 />
-                {sum.length < 1 ? <div><span>You dont have {title} yet.</span></div> :  <ChartDounat totalSum={totalSum}/> }
             </div>
         </div>
     );

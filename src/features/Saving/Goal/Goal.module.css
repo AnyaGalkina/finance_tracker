@@ -11,15 +11,11 @@
     width: 290px;
     border: #71c68d solid 2px;
     border-radius: 8px;
-    margin: 5px 0;
-
+    padding-bottom: 5px;
 }
 
 .goalContainer {
     width: 290px;
-    /*margin: 10px;*/
-    margin: 5px 0;
-
 }
 
 .target {
@@ -27,16 +23,16 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 10px;
+    margin: 15px;
     text-align: left;
     font-size: 16px;
 }
 
 .achievedText {
-    padding: 20px 0;
     font-size: 20px;
     font-weight: bold;
     color: #71c68d;
+
 }
 
 .imgContainer {
@@ -45,7 +41,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /*text-align: center;*/
 }
 
 @media screen and (max-width: 810px ) {
@@ -54,5 +49,4 @@
         justify-content: center;
         flex-wrap: nowrap;
     }
-    /*.*/
 }

@@ -5,7 +5,7 @@ import {totalIncomeReducer} from "../../features/Income/totalIncome-reducer";
 import {addIncomeAC, incomeReducer, removeIncomeAC} from "../../features/Income/income-reducer";
 import {availableMoneyReducer} from "../../features/AvailableMoneyTracker/availableMoney-reducer";
 import {loadState, saveState} from "../../common/utiles/local-storage";
-import {savingReducer, setNewGoal} from "../../features/Saving/saving-reducer";
+import {deleteGoal, savingReducer, setNewGoal, updateGoalCurrentSum} from "../../features/Saving/saving-reducer";
 
 export type ActionType = ReturnType<typeof addSpendAC>
     | ReturnType<typeof removeSpendAC>
@@ -14,7 +14,9 @@ export type ActionType = ReturnType<typeof addSpendAC>
     | ReturnType<typeof changeCategoryNameAC>
     | ReturnType<typeof increaseTotalSumAC>
     | ReturnType<typeof decreaseTotalSumAC>
-    | ReturnType<typeof setNewGoal>;
+    | ReturnType<typeof setNewGoal>
+    | ReturnType<typeof updateGoalCurrentSum>
+    | ReturnType<typeof deleteGoal>;
 
 
 

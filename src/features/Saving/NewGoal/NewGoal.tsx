@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 import React, {ChangeEvent, useState} from "react";
-import EditableSpan from "../../../common/components/CommonInput/EditableSpan/EditableSpan";
+import EditableSpan from "../../../common/components/EditableSpan/EditableSpan";
 import styles from "./NewGoal.module.css";
 import {TextField} from "@mui/material";
 import {setNewGoal} from "../saving-reducer";
@@ -11,7 +11,7 @@ import {BasicModal} from "./Modal";
 export const NewGoal = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [goalTitle, setGoalTitle] = useState("my goal");
+    const [goalTitle, setGoalTitle] = useState("goal name");
     const [objSum, setObjSum] = useState("");
     const [error, setError] = useState("");
     const [open, setOpen] = useState(true);
@@ -55,7 +55,7 @@ export const NewGoal = () => {
     return (
         <div>
             <BasicModal
-                title={"NEW GOAL:"}
+                title={"CREATE NEW GOAL"}
                 open={open}
                 buttonTitle={"Create goal"}
                 onSaveClickHandler={onNewGoalClickHandler}
@@ -68,12 +68,12 @@ export const NewGoal = () => {
                     changeTitleName={changeTitleName}
                     className={styles.editableSpan}
                     maxSymbols={25}
-                    label={"my goal"}
+                    label={"goal name"}
                 />
-                <h4>Objective amount</h4>
+                <h4>Target amount:</h4>
                 <div className={styles.input}>
                     <TextField
-                        label={"my goal"}
+                        label={null}
                         variant="outlined"
                         size="small"
                         value={objSum}
@@ -83,12 +83,6 @@ export const NewGoal = () => {
                     />
                     {error && <div style={{color: "red"}}>{error}</div>}
                 </div>
-                {/*<Button onClick={onNewGoalClickHandler}*/}
-                {/*        variant={"contained"}*/}
-                {/*    //@ts-ignore*/}
-                {/*        disabled={error}>*/}
-                {/*    Create goal*/}
-                {/*</Button>*/}
             </BasicModal>
         </div>
     )

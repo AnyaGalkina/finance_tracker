@@ -1,10 +1,11 @@
-import {GoalType, updateGoalCurrentSum} from "../saving-reducer";
+import {deleteGoal, GoalType, updateGoalCurrentSum} from "../saving-reducer";
 import {Button, TextField} from "@mui/material";
 import React, {ChangeEvent, useState} from "react";
 import {useDispatch} from "react-redux";
 import styles from "./Goal.module.css";
 import saveImg from "../../../assets/images/goal/save.jpg";
 import achievedImg from "../../../assets/images/goal/target.jpg";
+import {GoalTitle} from "./GoalTitle/GoalTitle";
 
 
 type PropsType = { goal: GoalType }
@@ -35,7 +36,7 @@ export const Gaol = ({goal}: PropsType) => {
 
     return (
         <div className={styles.mainGoalContainer}>
-            <div  className={styles.goalContainer}>
+            <div className={styles.goalContainer}>
                 {goal.isAchieved
                     ? <div className={styles.imgContainer} style={{backgroundImage: `url(${achievedImg})`}}></div>
                     : <div className={styles.imgContainer} style={{backgroundImage: `url(${saveImg})`}}></div>
@@ -43,8 +44,7 @@ export const Gaol = ({goal}: PropsType) => {
             </div>
             <div className={goal.isAchieved ? styles.achievedContainer : styles.goalContainer}>
 
-                <h3>{goal.goalTitle}</h3>
-
+                <GoalTitle goalId={goal.goalId} goalTitle={goal.goalTitle}/>
                 <div className={styles.target}>
                     <span>Target: </span> <span>{goal.goalObjSum}</span>
                 </div>

@@ -18,7 +18,7 @@ const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
 
     return (
         <div>
-            <h3>Last {itemName}</h3>
+            <h2>Last {itemName}</h2>
             {sum.map(s => {
 
                 return (

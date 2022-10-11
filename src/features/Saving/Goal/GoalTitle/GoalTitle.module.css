@@ -1,0 +1,12 @@
+.goalTitleContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px 10px 0 10px;
+}
+
+.iconsContainer {
+    display: flex;
+    align-items: center;
+    width: 20%;
+}
