@@ -8,7 +8,7 @@ const AvailableMoneyTracker: React.FC = () => {
 
     return (
             <div className={styles.moneyContainer}>
-                <h4 >My money</h4>
+                <h3>My money</h3>
                 <p>{currentMoneySum}</p>
             </div>
     );

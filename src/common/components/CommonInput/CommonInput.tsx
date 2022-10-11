@@ -41,7 +41,7 @@ const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
 
     return (
         <div className={styles.commonInputContainer}>
-            <h2>Add {title}</h2>
+            <h2>ADD {title}</h2>
 
             <div className={styles.input}>
                 <TextField
