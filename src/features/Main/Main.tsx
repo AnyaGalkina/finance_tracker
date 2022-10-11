@@ -12,9 +12,9 @@ const Main = () => {
     return (
         <div className={styles.containerBlock}>
             <div className={styles.container}>
-                <MainItem itemTitle={"Add Spends"} path={ROUTES.SPENDS} img={spendingImage}/>
-                <MainItem itemTitle={"Add Income"} path={ROUTES.INCOME} img={incomeImage}/>
-                <MainItem itemTitle={"Start Savings"} path={ROUTES.SAVINGS} img={savingImage}/>
+                <MainItem itemTitle={"ADD SPENDS"} path={ROUTES.SPENDS} img={spendingImage}/>
+                <MainItem itemTitle={"ADD INCOME"} path={ROUTES.INCOME} img={incomeImage}/>
+                <MainItem itemTitle={"START SAVING"} path={ROUTES.SAVINGS} img={savingImage}/>
             </div>
         </div>
     );

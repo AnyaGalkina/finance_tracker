@@ -29,7 +29,7 @@ const Income: React.FC = () => {
             <FinanceTracker
                 addItem={addIncome}
                 totalSum={totalIncome}
-                title={"income"}
+                title={"INCOME"}
                 sum={income}
                 removeItem={removeIncome}
             />

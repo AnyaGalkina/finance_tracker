@@ -18,7 +18,7 @@ export const Saving = () => {
     return (
         <div>
             <div>
-                <h2>My gaols</h2>
+                <h2>MY GOALS</h2>
 
                 {goals.map(g => {
                     return (
@@ -27,8 +27,8 @@ export const Saving = () => {
                 })}
 
 
-                <h3>Start saving now</h3>
-                <Button onClick={onAddGoalClickHandler} variant={"contained"}>Add new goal</Button>
+                <h3 style={{color: "#8797ad"}}>Start saving now</h3>
+                <Button style={{marginBottom:"30px"}} onClick={onAddGoalClickHandler} variant={"contained"}>Add new goal</Button>
             </div>
         </div>
     );

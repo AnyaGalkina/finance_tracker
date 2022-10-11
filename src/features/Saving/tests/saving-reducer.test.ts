@@ -1,4 +1,4 @@
-import {deleteGoal, GoalType, savingReducer} from "../../Saving/saving-reducer";
+import {deleteGoal, GoalType, savingReducer} from "../saving-reducer";
 
 
 let initialState: Array<GoalType>;

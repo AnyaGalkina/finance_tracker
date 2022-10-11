@@ -1,6 +1,7 @@
 import React, {memo, useCallback} from "react";
 import {SumType} from "../../../features/Spends/spend-reducer";
 import ListItem from "./ListItem/ListItem";
+import styles from "./ListOfLastSums.module.css";
 
 
 type PropsType = {
@@ -10,15 +11,14 @@ type PropsType = {
 }
 
 const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
-    console.log('ListOfLastSums');
 
     const removeItemHandler = useCallback((categoryId: string, id: string, sum: number) => {
         removeItem(categoryId, id, sum)
     },[])
 
     return (
-        <div>
-            <h2>Last {itemName}</h2>
+        <div className={styles.listContainer}>
+            {/*<h2>Last {itemName}</h2>*/}
             {sum.map(s => {
 
                 return (

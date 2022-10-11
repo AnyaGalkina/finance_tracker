@@ -1,20 +1,19 @@
 .list {
-    /*width: 50%px;*/
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 5px 0;
 }
 
 
-
-.title{
+.title {
     margin-left: 15px;
     width: 45%;
     text-align: left;
 }
 
-.sum{
+.sum {
     width: 30%;
     text-align: left;
 }

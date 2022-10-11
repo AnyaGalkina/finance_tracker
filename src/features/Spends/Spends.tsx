@@ -29,7 +29,7 @@ export const Spends: React.FC = () => {
             <FinanceTracker
                 addItem={addSpend}
                 totalSum={totalSpends}
-                title={"spends"}
+                title={"SPENDS"}
                 sum={spends}
                 removeItem={removeSpend}
             />
