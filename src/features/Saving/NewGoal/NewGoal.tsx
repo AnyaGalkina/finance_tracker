@@ -1,17 +1,17 @@
 import {useDispatch} from "react-redux";
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import EditableSpan from "../../../common/components/EditableSpan/EditableSpan";
 import styles from "./NewGoal.module.css";
 import {TextField} from "@mui/material";
 import {setNewGoal} from "../saving-reducer";
 import {useNavigate} from "react-router-dom";
 import {ROUTES} from "../../../common/enums/routes-enum";
-import {BasicModal} from "./Modal";
+import {BasicModal} from "./Modal/Modal";
 
 export const NewGoal = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [goalTitle, setGoalTitle] = useState("goal name");
+    const [goalTitle, setGoalTitle] = useState("");
     const [objSum, setObjSum] = useState("");
     const [error, setError] = useState("");
     const [open, setOpen] = useState(true);
@@ -24,8 +24,12 @@ export const NewGoal = () => {
         navigate(ROUTES.SAVINGS);
     };
 
-    const changeTitleName = (changedTitleName: string) => {
-        setGoalTitle(changedTitleName);
+    // const changeTitleName = (changedTitleName: string) => {
+    //     setGoalTitle(changedTitleName);
+    // }
+
+    const changeTitleName = (e: ChangeEvent<HTMLInputElement>) => {
+        setGoalTitle(e.currentTarget.value);
     }
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -36,7 +40,6 @@ export const NewGoal = () => {
             setError("Maximum value is 1000.000.000.000");
         }
     }
-
 
     const closeModal = () => {
         setError("");
@@ -63,13 +66,20 @@ export const NewGoal = () => {
                 onCancelClickHandler={onCancelClickHandler}
                 onClickOutsideHandler={onClickOutsideHandler}
             >
-                <EditableSpan
-                    title={goalTitle}
-                    changeTitleName={changeTitleName}
-                    className={styles.editableSpan}
-                    maxSymbols={25}
+                <TextField
                     label={"goal name"}
+                    variant="outlined"
+                    size="small"
+                    value={goalTitle}
+                    onChange={changeTitleName}
                 />
+                {/*<EditableSpan*/}
+                {/*    title={goalTitle}*/}
+                {/*    changeTitleName={changeTitleName}*/}
+                {/*    className={styles.editableSpan}*/}
+                {/*    maxSymbols={25}*/}
+                {/*    label={"goal name"}*/}
+                {/*/>*/}
                 <h4>Target amount:</h4>
                 <div className={styles.input}>
                     <TextField

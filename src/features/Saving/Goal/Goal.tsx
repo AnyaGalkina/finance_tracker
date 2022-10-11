@@ -1,6 +1,6 @@
 import {GoalType, updateGoalCurrentSum} from "../saving-reducer";
 import {Button, TextField} from "@mui/material";
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, KeyboardEvent, useState} from "react";
 import {useDispatch} from "react-redux";
 import styles from "./Goal.module.css";
 import saveImg from "../../../assets/images/goal/save.jpg";
@@ -17,7 +17,6 @@ export const Gaol = ({goal}: PropsType) => {
 
     const maxSum = 1000000000000;
 
-
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         if (+e.currentTarget.value >= 0 && +e.currentTarget.value < maxSum) {
             setCurrentSum(e.currentTarget.value);
@@ -27,11 +26,22 @@ export const Gaol = ({goal}: PropsType) => {
         }
     }
 
-    const onAddClickHandler = () => {
-        let newSavingSum = +currentSum;
-        let isAchieved = newSavingSum >= goal.goalObjSum;
-        dispatch(updateGoalCurrentSum(goal.goalId, newSavingSum, isAchieved));
+    const updateCurrentSum = () => {
+        let isAchieved = (+currentSum + goal.goalCurrentSum) >= goal.goalObjSum;
+        dispatch(updateGoalCurrentSum(goal.goalId, +currentSum, isAchieved));
         setCurrentSum("");
+    }
+
+
+    const onAddClickHandler = () => {
+        updateCurrentSum();
+    }
+
+
+    const onKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            updateCurrentSum();
+        }
     }
 
     return (
@@ -60,6 +70,7 @@ export const Gaol = ({goal}: PropsType) => {
                         type={"number"}
                         InputProps={{inputProps: {min: 0, max: maxSum}}}
                         onChange={onChangeHandler}
+                        onKeyDown={onKeyDownHandler}
                     />
                     {error && <div style={{color: "red"}}>{error}</div>}
                     <Button onClick={onAddClickHandler}
