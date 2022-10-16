@@ -1,29 +1,25 @@
 import {addSpendAC, removeSpendAC, spendsReducer, SumType} from "../spend-reducer";
 import {foodId, petId, travelId} from "../../../app/redux/categoryId";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import FlightIcon from "@mui/icons-material/Flight";
-import PetsIcon from "@mui/icons-material/Pets";
 import {changeCategoryNameAC} from "../totalSpends-reducer";
 
 let initState: SumType[];
 
 beforeEach(() => {
     initState = [
-        {categoryId: foodId, id: "0", categoryName: "Food", sum: 100, component: FastfoodIcon},
-        {categoryId: travelId, id: "1", categoryName: "Travel", sum: 10, component: FlightIcon},
-        {categoryId: foodId, id: "2", categoryName: "Food", sum: 200, component: FastfoodIcon},
+        {categoryId: foodId, id: "0", categoryName: "Food", sum: 100},
+        {categoryId: travelId, id: "1", categoryName: "Travel", sum: 10},
+        {categoryId: foodId, id: "2", categoryName: "Food", sum: 200},
     ];
 })
 
 test("expense should be added", () => {
-    let newState = spendsReducer(initState, addSpendAC(petId,  "Pet",  200,  PetsIcon));
+    let newState = spendsReducer(initState, addSpendAC(petId,  "Pet",  200));
 
     expect(newState.length).toBe(4);
     expect(newState[3].id).toBeDefined();
     expect(newState[3].categoryId).toBe(petId);
     expect(newState[3].categoryName).toBe("Pet");
     expect(newState[3].sum).toBe(200);
-    expect(newState[3].component).toBe(PetsIcon);
     expect(initState.length).toBe(3);
 })
 

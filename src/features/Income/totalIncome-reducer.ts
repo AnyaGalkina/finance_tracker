@@ -1,25 +1,20 @@
 import {depositId, getPresentsId, leaseId, otherIncomeId, salaryId, stocksIs} from "../../app/redux/categoryId";
-import HouseIcon from "@mui/icons-material/House";
-import WorkSharpIcon from "@mui/icons-material/WorkSharp";
-import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
-import RedeemIcon from "@mui/icons-material/Redeem";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
-import {CHANGE_CATEGORY_NAME, DECREASE_TOTAL_SUM, INCREASE_TOTAL_SUM, TotalSumType,} from "../Spends/totalSpends-reducer";
-import HelpSharpIcon from "@mui/icons-material/HelpSharp";
+import {
+    CHANGE_CATEGORY_NAME,
+    DECREASE_TOTAL_SUM,
+    INCREASE_TOTAL_SUM,
+    TotalSumType,
+} from "../Spends/totalSpends-reducer";
 import {ActionType} from "../../app/redux/store";
 
 
 const initialState: TotalSumType[] = [
-    {categoryId: salaryId, categoryName: "Salary", totalSum: 0, component: WorkSharpIcon, color: "primary"},
-    {categoryId: depositId, categoryName: "Deposit", totalSum: 0, component: SavingsSharpIcon,
-        //@ts-ignore
-        color: "warning"},
-    {categoryId: stocksIs, categoryName: "Stocks", totalSum: 0, component: ShowChartIcon, color: "success"},
-    {categoryId: leaseId, categoryName: "Lease", totalSum: 0, component: HouseIcon, color: "error"},
-    {categoryId: getPresentsId, categoryName: "Gifts", totalSum: 0, component: RedeemIcon, color: "secondary"},
-    {categoryId: otherIncomeId, categoryName: "Other", totalSum: 0, component: HelpSharpIcon,
-        //@ts-ignore
-        color: "info"},
+    {categoryId: salaryId, categoryName: "Salary", totalSum: 0},
+    {categoryId: depositId, categoryName: "Deposit", totalSum: 0},
+    {categoryId: stocksIs, categoryName: "Stocks", totalSum: 0, },
+    {categoryId: leaseId, categoryName: "Lease", totalSum: 0},
+    {categoryId: getPresentsId, categoryName: "Gifts", totalSum: 0},
+    {categoryId: otherIncomeId, categoryName: "Other", totalSum: 0},
 ];
 
 

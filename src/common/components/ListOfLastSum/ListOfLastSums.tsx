@@ -18,14 +18,12 @@ const ListOfLastSums = memo(({sum, removeItem, itemName }: PropsType) => {
 
     return (
         <div className={styles.listContainer}>
-            {/*<h2>Last {itemName}</h2>*/}
             {sum.map(s => {
 
                 return (
                     <ListItem
                         key={s.id}
                         categoryName={s.categoryName}
-                        component={s.component}
                         sum={s.sum}
                         removeItem={removeItemHandler}
                         id={s.id}

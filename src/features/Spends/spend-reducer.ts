@@ -1,4 +1,4 @@
-import {CHANGE_CATEGORY_NAME, SvgComponentType} from "./totalSpends-reducer";
+import {CHANGE_CATEGORY_NAME} from "./totalSpends-reducer";
 import {v1} from "uuid";
 import {ActionType} from "../../app/redux/store";
 
@@ -10,7 +10,6 @@ export type SumType = {
     id: string;
     categoryName: string;
     sum: number;
-    component: SvgComponentType
 }
 
 export const initialState: SumType[] = [];
@@ -25,7 +24,6 @@ export const spendsReducer = (state: SumType[] = initialState, action: ActionTyp
                     id: action.payload.id,
                     categoryName: action.payload.categoryName,
                     sum: action.payload.sum,
-                    component: action.payload.component
                 }
                 return [...state, newSpend];
             }
@@ -41,7 +39,7 @@ export const spendsReducer = (state: SumType[] = initialState, action: ActionTyp
     }
 }
 
-export const addSpendAC = (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
+export const addSpendAC = (categoryId: string, categoryName: string, sum: number) => {
     return {
         type: ADD_SPEND,
         payload: {
@@ -49,7 +47,6 @@ export const addSpendAC = (categoryId: string, categoryName: string, sum: number
             id: v1(),
             categoryName,
             sum,
-            component,
         }
     } as const
 }

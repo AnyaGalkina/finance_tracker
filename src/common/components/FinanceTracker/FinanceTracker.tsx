@@ -1,13 +1,13 @@
 import React, {memo, useCallback} from "react";
 import {SumType} from "../../../features/Spends/spend-reducer";
 import ListOfLastSums from "../ListOfLastSum/ListOfLastSums";
-import {SvgComponentType, TotalSumType} from "../../../features/Spends/totalSpends-reducer";
+import {TotalSumType} from "../../../features/Spends/totalSpends-reducer";
 import CommonInput from "../CommonInput/CommonInput";
 import styles from "./FinanceTracker.module.css";
 import ChartDounat from "../Chart/ChartDounat";
 
 type PropsType = {
-    addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
+    addItem: (categoryId: string, categoryName: string, sum: number) => void;
     totalSum: TotalSumType[];
     title: string;
     sum: SumType[];
@@ -16,8 +16,9 @@ type PropsType = {
 
 export const FinanceTracker = memo(({title, sum, removeItem, addItem, totalSum}: PropsType) => {
 
-    const addItemHandler = useCallback( (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => {
-        addItem(categoryId, categoryName, sum, component)
+    const addItemHandler = useCallback( (categoryId: string, categoryName: string, sum: number) => {
+        debugger
+        addItem(categoryId, categoryName, sum)
     }, []);
 
     const removeItemHandler = useCallback((categoryId: string, id: string, sum: number) => {

@@ -1,18 +1,17 @@
 import React, {ChangeEvent, memo, useCallback, useRef, useState} from "react";
 import IconsList from "./IconsList/IconList";
-import {SvgComponentType, TotalSumType} from "../../../features/Spends/totalSpends-reducer";
+import {TotalSumType} from "../../../features/Spends/totalSpends-reducer";
 import styles from "./CommonInput.module.css";
 import {TextField} from "@mui/material";
 
 
 type PropsType = {
-    addItem: (categoryId: string, categoryName: string, sum: number, component: SvgComponentType) => void;
+    addItem: (categoryId: string, categoryName: string, sum: number) => void;
     totalSum: TotalSumType[];
     title: string;
 }
 
 const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
-    console.log("CommonInput")
 
     const [value, setValue] = useState("");
     const [error, setError] = useState("");
@@ -25,9 +24,10 @@ const CommonInput = memo(({addItem, totalSum, title}: PropsType) => {
     const valueRef = useRef("");
     valueRef.current = value;
 
-    const addSumHandler = useCallback((categoryId: string, categoryName: string, component: SvgComponentType) => {
+    const addSumHandler = useCallback((categoryId: string, categoryName: string) => {
+        debugger
         if (+valueRef.current > 0 && +valueRef.current < maxSum) {
-            addItem(categoryId, categoryName, +valueRef.current, component)
+            addItem(categoryId, categoryName, +valueRef.current)
             setValue("");
             setError("");
         } else if (+valueRef.current > maxSum) {

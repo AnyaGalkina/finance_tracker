@@ -1,30 +1,26 @@
 import {SumType} from "../../Spends/spend-reducer";
 import {depositId, salaryId, stocksIs} from "../../../app/redux/categoryId";
-import WorkSharpIcon from "@mui/icons-material/WorkSharp";
-import ShowChartIcon from "@mui/icons-material/ShowChart";
 import {addIncomeAC, incomeReducer, removeIncomeAC} from "../income-reducer";
-import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
 import {changeCategoryNameAC} from "../../Spends/totalSpends-reducer";
 
 let initState: SumType[];
 
 beforeEach(() => {
     initState = [
-        {categoryId: salaryId, id: "0", categoryName: "Salary", sum: 1000, component: WorkSharpIcon},
-        {categoryId: stocksIs, id: "1", categoryName: "Stocks", sum: 10, component: ShowChartIcon},
-        {categoryId: salaryId, id: "2", categoryName: "Salary",sum: 2000, component: WorkSharpIcon},
+        {categoryId: salaryId, id: "0", categoryName: "Salary", sum: 1000},
+        {categoryId: stocksIs, id: "1", categoryName: "Stocks", sum: 10},
+        {categoryId: salaryId, id: "2", categoryName: "Salary",sum: 2000},
     ];
 })
 
 test("income should be added", () => {
-    let newState = incomeReducer(initState, addIncomeAC(depositId,  "Deposit",  500,  SavingsSharpIcon));
+    let newState = incomeReducer(initState, addIncomeAC(depositId,  "Deposit",  500));
 
     expect(newState.length).toBe(4);
     expect(newState[3].id).toBeDefined();
     expect(newState[3].categoryId).toBe(depositId);
     expect(newState[3].categoryName).toBe("Deposit");
     expect(newState[3].sum).toBe(500);
-    expect(newState[3].component).toBe(SavingsSharpIcon);
     expect(initState.length).toBe(3);
 })
 

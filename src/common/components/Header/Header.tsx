@@ -45,7 +45,12 @@ export const Header = (props: Props) => {
                             navigate(nav.path)
                         }}>
                             <ListItemButton sx={{textAlign: "center"}}>
-                                <NavLink key={index} to={nav.path} className={styles.link}>{nav.item}</NavLink>
+                                <NavLink
+                                    key={index}
+                                    to={nav.path}
+                                    className={({ isActive }) => isActive ? styles.linkActive : styles.link}
+                                >{nav.item}
+                                </NavLink>
                             </ListItemButton>
                         </ListItem>
                     </div>
@@ -59,7 +64,7 @@ export const Header = (props: Props) => {
     return (
         <Box sx={{display: "flex"}}>
             <AppBar component="nav" style={{backgroundColor: "white", boxShadow: "none"}}>
-                <Toolbar style={{marginLeft: "1%"}}>
+                <Toolbar style={{marginLeft: "10%"}}>
                     <IconButton
                         color="primary"
                         aria-label="open drawer"

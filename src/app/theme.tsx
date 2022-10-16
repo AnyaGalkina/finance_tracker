@@ -22,10 +22,5 @@ export const theme = createTheme({
         warning: {
             main: "#eb9858",
         },
-        // mode: "dark",
-        // background: {
-        //     default: "#242e41",
-        //     paper: "#2e3b52"
-        // },
     }
 })

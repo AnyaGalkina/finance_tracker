@@ -1,20 +1,19 @@
 import {
-    changeCategoryNameAC, decreaseTotalSumAC, increaseTotalSumAC,
+    changeCategoryNameAC,
+    decreaseTotalSumAC,
+    increaseTotalSumAC,
     totalSpendReducer,
     TotalSumType,
 } from "../totalSpends-reducer";
 import {foodId, petId, travelId} from "../../../app/redux/categoryId";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import FlightIcon from "@mui/icons-material/Flight";
-import PetsIcon from "@mui/icons-material/Pets";
 
 let initState: TotalSumType[];
 
 beforeEach(() => {
     initState = [
-        {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "primary"},
-        {categoryId: petId, categoryName: "Pet", totalSum: 100, component: PetsIcon, color: "primary"},
-        {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "secondary"},
+        {categoryId: foodId, categoryName: "Food", totalSum: 0},
+        {categoryId: petId, categoryName: "Pet", totalSum: 100},
+        {categoryId: travelId, categoryName: "Travel", totalSum: 0},
     ]
 })
 

@@ -3,6 +3,8 @@
     color: black;
 }
 
-.link:hover {
+.linkActive{
    color: #0d6b63;
+    font-weight: bold;
+    text-decoration: none;
 }

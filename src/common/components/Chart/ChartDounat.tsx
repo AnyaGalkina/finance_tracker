@@ -3,7 +3,6 @@ import {Chart as ChartJS, ArcElement, Tooltip, Legend} from "chart.js";
 import {Doughnut} from "react-chartjs-2";
 import {TotalSumType} from "../../../features/Spends/totalSpends-reducer";
 import styles from "./ChartDounat.module.css";
-import {Bar} from "react-chartjs-2/dist/typedCharts";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
