@@ -20,6 +20,7 @@ You can customize expenditures and income categories by your needs, edit data an
 - Redux
 - React-redux
 - React router dom v6
+- Local Storage
 - React-Chartjs-2
 - MUI
 - React-Fontawesome
