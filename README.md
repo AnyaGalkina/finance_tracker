@@ -15,7 +15,7 @@ You can customize expenditures and income categories by your needs, edit data an
 
 ## Technologies Used
 
-- Typescript
+- TypeScript
 - React
 - Redux
 - React-redux
