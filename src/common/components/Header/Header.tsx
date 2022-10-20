@@ -6,27 +6,39 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import {NavLink, useNavigate} from "react-router-dom";
-import styles from "./Header.module.css";
+import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import HomeIcon from "@mui/icons-material/Home";
+import PaymentsIcon from "@mui/icons-material/Payments";
+import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
+import {NavItem} from "./NavItem/NavItem";
+import {SvgComponentType} from "../../../features/Spends/totalSpends-reducer";
 
 interface Props {
     window?: () => Window;
 }
 
-const navItems = [{item: "Home", path: ROUTES.HOME}, {item: "Spends", path: ROUTES.SPENDS}, {
-    item: "Income",
-    path: ROUTES.INCOME
-}, {item: "Savings", path: ROUTES.SAVINGS}];
+export type NavItemType = {
+    item: string;
+    path: any;
+    imgComponent: SvgComponentType;
+}
+
+const navItems: NavItemType[] = [
+    {item: "Home", path: ROUTES.HOME, imgComponent: HomeIcon},
+    {item: "Spends", path: ROUTES.SPENDS, imgComponent: ShoppingCartIcon},
+    {item: "Income", path: ROUTES.INCOME, imgComponent: PaymentsIcon},
+    {item: "Savings", path: ROUTES.SAVINGS, imgComponent: SavingsSharpIcon},
+    {item: "Relax and play", path: ROUTES.GAME, imgComponent: SportsEsportsIcon},
+];
+
 
 export const Header = (props: Props) => {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = useState(false);
-    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -40,20 +52,7 @@ export const Header = (props: Props) => {
             <Divider/>
             <List>
                 {navItems.map((nav, index) => (
-                    <div className={styles.link} key={index}>
-                        <ListItem disablePadding onClick={() => {
-                            navigate(nav.path)
-                        }}>
-                            <ListItemButton sx={{textAlign: "center"}}>
-                                <NavLink
-                                    key={index}
-                                    to={nav.path}
-                                    className={({ isActive }) => isActive ? styles.linkActive : styles.link}
-                                >{nav.item}
-                                </NavLink>
-                            </ListItemButton>
-                        </ListItem>
-                    </div>
+                    <NavItem nav={nav} key={index}/>
                 ))}
             </List>
         </Box>
