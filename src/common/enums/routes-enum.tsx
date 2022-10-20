@@ -4,5 +4,6 @@ export enum ROUTES {
     INCOME = "/income",
     SAVINGS = "/savings",
     PAGE_NOT_FOUND = "/404",
-    NEW_GOAL = "/new-goal"
+    NEW_GOAL = "/new-goal",
+    GAME = "/game"
 }
