@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/finance_tracker/static/css/main.f3a6520f.css",
-    "main.js": "/finance_tracker/static/js/main.4573a26e.js",
+    "main.js": "/finance_tracker/static/js/main.49e42be1.js",
     "static/js/787.3523ed75.chunk.js": "/finance_tracker/static/js/787.3523ed75.chunk.js",
     "static/media/spends.jpg": "/finance_tracker/static/media/spends.f18273785e31d8543fba.jpg",
     "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.996f7229cebf8029b270.jpg",
@@ -11,11 +11,11 @@
     "static/media/target.jpg": "/finance_tracker/static/media/target.e25d0881744814e3d9b8.jpg",
     "index.html": "/finance_tracker/index.html",
     "main.f3a6520f.css.map": "/finance_tracker/static/css/main.f3a6520f.css.map",
-    "main.4573a26e.js.map": "/finance_tracker/static/js/main.4573a26e.js.map",
+    "main.49e42be1.js.map": "/finance_tracker/static/js/main.49e42be1.js.map",
     "787.3523ed75.chunk.js.map": "/finance_tracker/static/js/787.3523ed75.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f3a6520f.css",
-    "static/js/main.4573a26e.js"
+    "static/js/main.49e42be1.js"
   ]
 }
