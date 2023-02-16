@@ -35,6 +35,12 @@
 
 }
 
+.startSavingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .imgContainer {
     width: 290px;
     height: 290px;
