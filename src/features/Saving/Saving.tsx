@@ -26,7 +26,6 @@ export const Saving = () => {
                     )
                 })}
 
-
                 <h3 style={{color: "#8797ad"}}>Start saving now</h3>
                 <Button style={{marginBottom:"30px"}} onClick={onAddGoalClickHandler} variant={"contained"}>Add new goal</Button>
             </div>

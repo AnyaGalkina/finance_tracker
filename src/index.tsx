@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./app/App";
-import reportWebVitals from "./reportWebVitals";
 import {HashRouter} from "react-router-dom";
 import {store} from "./app/redux/store";
 import {Provider} from "react-redux";
@@ -22,4 +21,16 @@ root.render(
     </HashRouter>
 );
 
-reportWebVitals();
+// window.addEventListener('load', async () => {
+//     if ('serviceWorker' in navigator) {
+//         try {
+//             const reg = await navigator.serviceWorker.register(`/service-worker.ts`);
+//             console.log('Service worker register success', reg);
+//         } catch (e) {
+//             console.log('Service worker register fail')
+//         }
+//     }
+// })
+
+
+// reportWebVitals();

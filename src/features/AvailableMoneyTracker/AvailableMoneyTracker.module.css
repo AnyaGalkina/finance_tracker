@@ -1,9 +1,6 @@
 .moneyContainer {
     width: 100%;
     min-height: 10vh;
-    /*background-color: #c09fda;*/
-    /*background-color: #71c68d;*/
-    /*background-color: #71c68d;*/
     background: linear-gradient(to left,#71c68d, #0d6b63);
     border-radius: 8px;
     font-size: 25px;

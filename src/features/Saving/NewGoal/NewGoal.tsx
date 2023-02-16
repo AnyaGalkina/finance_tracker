@@ -1,12 +1,11 @@
-import {useDispatch} from "react-redux";
-import React, {ChangeEvent, KeyboardEvent, useState} from "react";
-import EditableSpan from "../../../common/components/EditableSpan/EditableSpan";
-import styles from "./NewGoal.module.css";
-import {TextField} from "@mui/material";
-import {setNewGoal} from "../saving-reducer";
-import {useNavigate} from "react-router-dom";
-import {ROUTES} from "../../../common/enums/routes-enum";
-import {BasicModal} from "./Modal/Modal";
+import {useDispatch} from 'react-redux';
+import React, {ChangeEvent, useState} from 'react';
+import styles from './NewGoal.module.css';
+import {TextField} from '@mui/material';
+import {setNewGoal} from '../saving-reducer';
+import {useNavigate} from 'react-router-dom';
+import {ROUTES} from '../../../common/enums/routes-enum';
+import {BasicModal} from './Modal/Modal';
 
 export const NewGoal = () => {
     const dispatch = useDispatch();
@@ -23,10 +22,6 @@ export const NewGoal = () => {
         dispatch(setNewGoal(goalTitle, objSumNum));
         navigate(ROUTES.SAVINGS);
     };
-
-    // const changeTitleName = (changedTitleName: string) => {
-    //     setGoalTitle(changedTitleName);
-    // }
 
     const changeTitleName = (e: ChangeEvent<HTMLInputElement>) => {
         setGoalTitle(e.currentTarget.value);
@@ -73,13 +68,6 @@ export const NewGoal = () => {
                     value={goalTitle}
                     onChange={changeTitleName}
                 />
-                {/*<EditableSpan*/}
-                {/*    title={goalTitle}*/}
-                {/*    changeTitleName={changeTitleName}*/}
-                {/*    className={styles.editableSpan}*/}
-                {/*    maxSymbols={25}*/}
-                {/*    label={"goal name"}*/}
-                {/*/>*/}
                 <h4>Target amount:</h4>
                 <div className={styles.input}>
                     <TextField
