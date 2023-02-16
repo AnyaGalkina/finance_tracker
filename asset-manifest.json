@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f3a6520f.css",
-    "main.js": "/static/js/main.4a15f29b.js",
-    "static/media/spends.jpg": "/static/media/spends.f18273785e31d8543fba.jpg",
-    "static/media/savingImg.jpg": "/static/media/savingImg.996f7229cebf8029b270.jpg",
-    "static/media/incomeImg.jpg": "/static/media/incomeImg.81d2ba7f0efb2bc77419.jpg",
-    "static/media/robot.jpg": "/static/media/robot.443fa862ec0e379f2b04.jpg",
-    "static/media/save.jpg": "/static/media/save.d7ebf6afe33afb630c3c.jpg",
-    "static/media/target.jpg": "/static/media/target.d7c01c47e9b77f897645.jpg",
-    "index.html": "/index.html",
-    "main.f3a6520f.css.map": "/static/css/main.f3a6520f.css.map",
-    "main.4a15f29b.js.map": "/static/js/main.4a15f29b.js.map"
+    "main.css": "/finance_tracker/static/css/main.f3a6520f.css",
+    "main.js": "/finance_tracker/static/js/main.19cc0b67.js",
+    "static/media/spends.jpg": "/finance_tracker/static/media/spends.f18273785e31d8543fba.jpg",
+    "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.996f7229cebf8029b270.jpg",
+    "static/media/incomeImg.jpg": "/finance_tracker/static/media/incomeImg.81d2ba7f0efb2bc77419.jpg",
+    "static/media/robot.jpg": "/finance_tracker/static/media/robot.443fa862ec0e379f2b04.jpg",
+    "static/media/save.jpg": "/finance_tracker/static/media/save.d7ebf6afe33afb630c3c.jpg",
+    "static/media/target.jpg": "/finance_tracker/static/media/target.d7c01c47e9b77f897645.jpg",
+    "index.html": "/finance_tracker/index.html",
+    "main.f3a6520f.css.map": "/finance_tracker/static/css/main.f3a6520f.css.map",
+    "main.19cc0b67.js.map": "/finance_tracker/static/js/main.19cc0b67.js.map"
   },
   "entrypoints": [
     "static/css/main.f3a6520f.css",
-    "static/js/main.4a15f29b.js"
+    "static/js/main.19cc0b67.js"
   ]
 }
