@@ -8,14 +8,14 @@ type BasicModalType = {
     title: string;
     onCancelClickHandler: () => void;
     onSaveClickHandler: () => void;
-    onClickOutsideHandler: () => void;
+    onClickOutsideHandler?: () => void;
     buttonTitle: string;
     error: string
 }
 
 export const BasicModal = (props: BasicModalType) => {
 
-    const {children, open, title, onSaveClickHandler, onCancelClickHandler, onClickOutsideHandler, buttonTitle, error} = props;
+    const {children, open, title, onSaveClickHandler, onCancelClickHandler, buttonTitle, error} = props;
 
     return (
         <div >
@@ -50,3 +50,32 @@ export const BasicModal = (props: BasicModalType) => {
     </div>
     )
 }
+
+//  ,
+//    {
+//      "src": "/src/assets/images/goal/target.jpg",
+//      "sizes": "500x333",
+//      "type": "image/jpg"
+//    },
+//    {
+//      "src": "/src/assets/images/goal/save.jpg",
+//      "sizes": "500x500",
+//      "type": "image/jpg"
+//    },
+//
+//
+//    {
+//      "src": "/src/assets/images/incomeImg.jpg",
+//      "sizes": "640x381",
+//      "type": "image/jpg"
+//    },
+//    {
+//      "src": "/src/assets/images/savingImg.jpg",
+//      "sizes": "640x400",
+//      "type": "image/jpg"
+//    },
+//    {
+//      "src": "/src/assets/images/spends.jpg",
+//      "sizes": "640x640",
+//      "type": "image/jpg"
+//    }

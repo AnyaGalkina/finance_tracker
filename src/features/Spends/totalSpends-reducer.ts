@@ -29,33 +29,6 @@ export const CHANGE_CATEGORY_NAME = "CHANGE_CATEGORY_NAME";
 export const INCREASE_TOTAL_SUM = "INCREASE_TOTAL_SUM";
 export const DECREASE_TOTAL_SUM = "DECREASE_TOTAL_SUM";
 
-
-// {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "success"}
-//
-// {state[food].component}
-//
-// const initialState: TotalSumType[] = [
-//     {categoryId: foodId, categoryName: "Food", totalSum: 0, component: FastfoodIcon, color: "success"},
-//     {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 0, component: RestaurantIcon, color: "error"},
-//     {categoryId: travelId, categoryName: "Travel", totalSum: 0, component: FlightIcon, color: "info"},
-//     {categoryId: transportId, categoryName: "Transport", totalSum: 0, component: DirectionsCarIcon, color: "warning"},
-//     {categoryId: petId, categoryName: "Pet", totalSum: 10, component: PetsIcon, color: "primary"},
-//     {categoryId: houseId, categoryName: "House", totalSum: 0, component: HouseIcon, color: "secondary"},
-//     {categoryId: healthCareId, categoryName: "Health care", totalSum: 0, component: VaccinesIcon, color: "error"},
-//     {categoryId: clothesId, categoryName: "Shopping", totalSum: 0, component: CheckroomIcon, color: "success"},
-//     {
-//         categoryId: kidsId, categoryName: "Kids", totalSum: 0, component: ChildFriendlyIcon,
-//         color: "warning"
-//     },
-//     {
-//         categoryId: sportId, categoryName: "Sport", totalSum: 0, component: FitnessCenterIcon,
-//         color: "info"
-//     },
-//     {categoryId: giftsId, categoryName: "Gifts", totalSum: 0, component: CelebrationSharpIcon, color: "error"},
-//     {categoryId: creditsId, categoryName: "Credits", totalSum: 0, component: AccountBalanceIcon, color: "primary"},
-//     {categoryId: otherExpanseId, categoryName: "Other", totalSum: 0, component: HelpSharpIcon, color: "secondary"},
-// ];
-
 const initialState: TotalSumType[] = [
     {categoryId: foodId, categoryName: "Food", totalSum: 0},
     {categoryId: restaurantsId, categoryName: "Restaurants", totalSum: 0},
@@ -127,4 +100,3 @@ export const decreaseTotalSumAC = (categoryId: string, totalSum: number) => {
         }
     } as const
 }
-
