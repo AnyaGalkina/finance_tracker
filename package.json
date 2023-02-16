@@ -1,8 +1,7 @@
 {
   "name": "budget-tracker",
   "version": "0.1.0",
-  "homepage": "/",
-  "COMMENT-homepage": "https://anyagalkina.github.io/finance_tracker/",
+  "homepage": "https://anyagalkina.github.io/finance_tracker/",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -64,4 +63,3 @@
     "gh-pages": "^4.0.0"
   }
 }
-
