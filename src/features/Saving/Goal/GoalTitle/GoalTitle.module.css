@@ -5,6 +5,11 @@
     padding: 10px 10px 0 10px;
 }
 
+.goalTitle {
+    word-wrap: break-word;
+    width: 200px;
+}
+
 .iconsContainer {
     display: flex;
     align-items: center;

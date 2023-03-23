@@ -58,10 +58,10 @@ const EditableSpan = memo(({title, changeTitleName, className, maxSymbols, label
                 />
                 {error && <div style={{color: "red"}}>{error}</div>  }
             </div>
-            : <span
+            : <div
                 className={className}
                 onClick={onClickHandler
-                }>{title}</span>
+                }>{title}</div>
     );
 });
 

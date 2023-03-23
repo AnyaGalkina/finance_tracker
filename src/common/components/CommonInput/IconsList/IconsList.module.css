@@ -15,6 +15,7 @@
 
 .title {
     max-width: 110px;
+    word-wrap: break-word;
     padding: 10px;
     font-size: 16px;
 }

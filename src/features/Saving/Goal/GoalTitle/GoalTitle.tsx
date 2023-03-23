@@ -20,7 +20,10 @@ export const GoalTitle = ({goalTitle, goalId }: PropsType) => {
 
     return (
         <div className={styles.goalTitleContainer}>
-            <h3>{goalTitle}</h3>
+            <div className={styles.goalTitle}>
+                <h3>{goalTitle}</h3>
+            </div>
+
 
             <div className={styles.iconsContainer}>
                 <IconButton aria-label="delete" onClick={onRemoveClickHandler}>

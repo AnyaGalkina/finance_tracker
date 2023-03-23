@@ -24,7 +24,7 @@ const ListItem: React.FC<PropsType> = memo(({id, categoryName, sum, removeItem, 
                 component={categoriesImg[categoryId].component}
                 inheritViewBox
             />
-            <span className={styles.title}>{categoryName}</span>
+            <div className={styles.title}>{categoryName}</div>
             <span className={styles.sum}>{sum}</span>
             <button className={styles.button} onClick={onClickHandler}>X</button>
         </div>

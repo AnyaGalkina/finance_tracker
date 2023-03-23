@@ -9,12 +9,13 @@
 
 .title {
     margin-left: 15px;
-    width: 45%;
+    width: 40%;
     text-align: left;
+    word-wrap: break-word;
 }
 
 .sum {
-    width: 30%;
+    width: 35%;
     text-align: left;
 }
 
