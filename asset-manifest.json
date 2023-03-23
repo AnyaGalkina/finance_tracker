@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/finance_tracker/static/css/main.95b5e4d9.css",
-    "main.js": "/finance_tracker/static/js/main.048e68be.js",
+    "main.css": "/finance_tracker/static/css/main.27dbf25e.css",
+    "main.js": "/finance_tracker/static/js/main.92c35938.js",
     "static/media/plant-growing.jpg": "/finance_tracker/static/media/plant-growing.9305fd229082f5db873b.jpg",
     "static/media/spends.jpg": "/finance_tracker/static/media/spends.82b6e859b48dc158a56b.jpg",
     "static/media/savingImg.jpg": "/finance_tracker/static/media/savingImg.cc54f16a70a22cfc8062.jpg",
@@ -10,11 +10,11 @@
     "static/media/save.jpg": "/finance_tracker/static/media/save.d7ebf6afe33afb630c3c.jpg",
     "static/media/target.jpg": "/finance_tracker/static/media/target.d7c01c47e9b77f897645.jpg",
     "index.html": "/finance_tracker/index.html",
-    "main.95b5e4d9.css.map": "/finance_tracker/static/css/main.95b5e4d9.css.map",
-    "main.048e68be.js.map": "/finance_tracker/static/js/main.048e68be.js.map"
+    "main.27dbf25e.css.map": "/finance_tracker/static/css/main.27dbf25e.css.map",
+    "main.92c35938.js.map": "/finance_tracker/static/js/main.92c35938.js.map"
   },
   "entrypoints": [
-    "static/css/main.95b5e4d9.css",
-    "static/js/main.048e68be.js"
+    "static/css/main.27dbf25e.css",
+    "static/js/main.92c35938.js"
   ]
 }
