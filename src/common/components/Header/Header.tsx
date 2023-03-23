@@ -1,14 +1,7 @@
 import React, {useState} from "react";
 import {ROUTES} from "../../enums/routes-enum";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import {Divider, Drawer, IconButton, List, Toolbar, Typography, Box, AppBar }from "@mui/material";
+import MenuIcon  from "@mui/icons-material/Menu";
 import SavingsSharpIcon from "@mui/icons-material/SavingsSharp";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeIcon from "@mui/icons-material/Home";
